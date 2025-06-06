@@ -10,11 +10,11 @@ namespace AspnetRun.Application.Extentions
 {
     public static class ProductModelExtensions
     {
-        public static ProductModel ToProductModel(this Product product)
+        public static ProductDto ToProductModel(this Product product)
         {
             if (product == null) return null;
 
-            return new ProductModel
+            return new ProductDto
             {
                 Id = product.Id,
                 Name = product.Name,
@@ -26,7 +26,7 @@ namespace AspnetRun.Application.Extentions
                 Star= product.Star,
                 Summary = product.Summary,
                 UnitsInStock = product.UnitsInStock,
-                Category = product.Category != null ? new CategoryModel
+                Category = product.Category != null ? new CategoryDto
                 {
                     Id = product.Category.Id,
                     Name = product.Category.Name,
@@ -36,9 +36,9 @@ namespace AspnetRun.Application.Extentions
             };
         }
 
-        public static List<ProductModel> ToProductModelList(this List<Product> products)
+        public static List<ProductDto> ToProductModelList(this List<Product> products)
         {
-           var result = new List<ProductModel>();
+           var result = new List<ProductDto>();
 
             if (products == null || !products.Any()) return result;
 
@@ -50,7 +50,7 @@ namespace AspnetRun.Application.Extentions
             return result;
         }
 
-        public static Product ToProductEntity(this ProductModel productModel)
+        public static Product ToProductEntity(this ProductDto productModel)
         {
             if (productModel == null) return null;
 

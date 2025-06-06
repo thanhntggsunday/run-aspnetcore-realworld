@@ -8,10 +8,10 @@ namespace AspnetRun.Web.Mapper
     {
         public AspnetRunProfile()
         {
-            CreateMap<ProductModel, ProductViewModel>().ReverseMap();
-            CreateMap<CategoryModel, CategoryViewModel>().ReverseMap();
-            CreateMap<CartModel, CartViewModel>().ReverseMap();
-            CreateMap<CartItemModel, CartItemViewModel>().ReverseMap();
+            CreateMap<ProductDto, ProductViewModel>().ReverseMap();
+            CreateMap<CategoryDto, CategoryViewModel>().ReverseMap();
+            CreateMap<CartDto, CartViewModel>().ReverseMap();
+            CreateMap<CartItemDto, CartItemViewModel>().ReverseMap();
         }
     }
 }

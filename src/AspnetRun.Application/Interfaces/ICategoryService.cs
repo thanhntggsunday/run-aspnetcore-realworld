@@ -6,6 +6,6 @@ namespace AspnetRun.Application.Interfaces
 {
     public interface ICategoryService
     {
-        Task<IEnumerable<CategoryModel>> GetCategoryList();
+        Task<IEnumerable<CategoryDto>> GetCategoryList();
     }
 }

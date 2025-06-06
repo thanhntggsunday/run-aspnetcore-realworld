@@ -2,7 +2,7 @@
 
 namespace AspnetRun.Application.Models
 {
-    public class ProductModel : BaseModel
+    public class ProductDto : BaseDto
     {
         public string? Name { get; set; }
         public string? Slug { get; set; }
@@ -13,6 +13,6 @@ namespace AspnetRun.Application.Models
         public int? UnitsInStock { get; set; }
         public double Star { get; set; }
         public int? CategoryId { get; set; }
-        public CategoryModel? Category { get; set; }
+        public CategoryDto? Category { get; set; }
     }
 }

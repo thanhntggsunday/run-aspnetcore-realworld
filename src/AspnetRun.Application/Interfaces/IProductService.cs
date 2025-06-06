@@ -6,13 +6,13 @@ namespace AspnetRun.Application.Interfaces
 {
     public interface IProductService
     {
-        Task<List<ProductModel>> GetProductList();
-        Task<ProductModel> GetProductById(int productId);
-        Task<ProductModel> GetProductBySlug(string slug);
-        Task<List<ProductModel>> GetProductByName(string productName);
-        Task<List<ProductModel>> GetProductByCategory(int categoryId);
-        Task<ProductModel> Create(ProductModel productModel);
-        Task Update(ProductModel productModel);
-        Task Delete(ProductModel productModel);
+        Task<List<ProductDto>> GetProductList();
+        Task<ProductDto> GetProductById(int productId);
+        Task<ProductDto> GetProductBySlug(string slug);
+        Task<List<ProductDto>> GetProductByName(string productName);
+        Task<List<ProductDto>> GetProductByCategory(int categoryId);
+        Task<ProductDto> Create(ProductDto productModel);
+        Task Update(ProductDto productModel);
+        Task Delete(ProductDto productModel);
     }
 }

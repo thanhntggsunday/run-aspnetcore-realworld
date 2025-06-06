@@ -24,19 +24,19 @@ namespace AspnetRun.Application.Services
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public async Task<CartModel> GetCartByUserName(string userName)
+        public async Task<CartDto> GetCartByUserName(string userName)
         {
             var cart = await GetExistingOrCreateNewCart(userName);
-            var cartModel = ObjectMapper.Mapper.Map<CartModel>(cart);
+            var cartModel = ObjectMapper.Mapper.Map<CartDto>(cart);
 
             if (cart.Items.Any(c => c.Product == null)) // If product can not loaded from razor page, we apply manuel mapping.
             {
                 cartModel.Items.Clear();
                 foreach (var item in cart.Items)
                 {
-                    var cartItemModel = ObjectMapper.Mapper.Map<CartItemModel>(item);
+                    var cartItemModel = ObjectMapper.Mapper.Map<CartItemDto>(item);
                     var product = await _productRepository.GetProductByIdWithCategoryAsync(item.ProductId);
-                    var productModel = ObjectMapper.Mapper.Map<ProductModel>(product);
+                    var productModel = ObjectMapper.Mapper.Map<ProductDto>(product);
                     cartItemModel.Product = productModel;
                     cartModel.Items.Add(cartItemModel);
                 }

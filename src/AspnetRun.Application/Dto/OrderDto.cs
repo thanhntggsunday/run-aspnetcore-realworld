@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AspnetRun.Application.Models
 {
-    public class OrderModel : BaseModel
+    public class OrderDto : BaseDto
     {
         public string? UserName { get; set; }
         public AddressModel? BillingAddress { get; set; }
@@ -12,7 +12,7 @@ namespace AspnetRun.Application.Models
         public OrderStatusModel Status { get; set; }
         public decimal GrandTotal { get; set; }
 
-        public List<OrderItemModel> Items { get; set; } = new List<OrderItemModel>();
+        public List<OrderItemDto> Items { get; set; } = new List<OrderItemDto>();
     }
 
     public class AddressModel

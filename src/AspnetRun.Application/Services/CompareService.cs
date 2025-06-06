@@ -24,15 +24,15 @@ namespace AspnetRun.Application.Services
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }        
 
-        public async Task<CompareModel> GetCompareByUserName(string userName)
+        public async Task<CompareDto> GetCompareByUserName(string userName)
         {
             var compare = await GetExistingOrCreateNewCompare(userName);
-            var compareModel = ObjectMapper.Mapper.Map<CompareModel>(compare);
+            var compareModel = ObjectMapper.Mapper.Map<CompareDto>(compare);
             
             foreach (var item in compare.ProductCompares)
             {
                 var product = await _productRepository.GetProductByIdWithCategoryAsync(item.ProductId);
-                var productModel = ObjectMapper.Mapper.Map<ProductModel>(product);
+                var productModel = ObjectMapper.Mapper.Map<ProductDto>(product);
                 compareModel.Items.Add(productModel);
             }
             return compareModel;

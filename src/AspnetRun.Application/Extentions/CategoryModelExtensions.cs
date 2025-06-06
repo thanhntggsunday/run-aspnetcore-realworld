@@ -10,11 +10,11 @@ namespace AspnetRun.Application.Extentions
 {
     public static class CategoryModelExtensions
     {
-        public static CategoryModel ToCategoryModel(this Category category)
+        public static CategoryDto ToCategoryModel(this Category category)
         {
             if (category == null) return null;
 
-            return new CategoryModel
+            return new CategoryDto
             {
                 Id = category.Id,
                 Name = category.Name,

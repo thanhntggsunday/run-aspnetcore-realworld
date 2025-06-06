@@ -25,15 +25,15 @@ namespace AspnetRun.Application.Mapper
         {
             public AspnetRunDtoMapper()
             {
-                CreateMap<Product, ProductModel>()
+                CreateMap<Product, ProductDto>()
                     .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name)).ReverseMap();
 
-                CreateMap<Category, CategoryModel>().ReverseMap();
-                CreateMap<Wishlist, WishlistModel>().ReverseMap();
-                CreateMap<Compare, CompareModel>().ReverseMap();
-                CreateMap<Order, OrderModel>().ReverseMap();
-                CreateMap<Cart, CartModel>().ReverseMap();
-                CreateMap<CartItem, CartItemModel>().ReverseMap();
+                CreateMap<Category, CategoryDto>().ReverseMap();
+                CreateMap<Wishlist, WishlistDto>().ReverseMap();
+                CreateMap<Compare, CompareDto>().ReverseMap();
+                CreateMap<Order, OrderDto>().ReverseMap();
+                CreateMap<Cart, CartDto>().ReverseMap();
+                CreateMap<CartItem, CartItemDto>().ReverseMap();
             }
         }
     }

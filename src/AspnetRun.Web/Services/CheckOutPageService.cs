@@ -37,7 +37,7 @@ namespace AspnetRun.Web.Services
             TransformCartItemToOrderItem(order, cart);
             SetUserNameOfOrder(order, userName);
             
-            var mappedOrderModel = _mapper.Map<OrderModel>(order);
+            var mappedOrderModel = _mapper.Map<OrderDto>(order);
             await _orderAppService.CheckOut(mappedOrderModel);
 
             await _cartAppService.ClearCart(userName);

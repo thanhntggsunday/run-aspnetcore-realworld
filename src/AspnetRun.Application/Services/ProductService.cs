@@ -23,7 +23,7 @@ namespace AspnetRun.Application.Services
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public async Task<List<ProductModel>> GetProductList()
+        public async Task<List<ProductDto>> GetProductList()
         {
             var productList = await _productRepository.GetProductListAsync();
             // var mapped = ObjectMapper.Mapper.Map<List<ProductModel>>(productList.ToList());
@@ -31,7 +31,7 @@ namespace AspnetRun.Application.Services
             return mapped;
         }
 
-        public async Task<ProductModel> GetProductById(int productId)
+        public async Task<ProductDto> GetProductById(int productId)
         {
             var product = await _productRepository.GetByIdAsync(productId);
             // var mapped = ObjectMapper.Mapper.Map<ProductModel>(product);
@@ -39,7 +39,7 @@ namespace AspnetRun.Application.Services
             return mapped;
         }
 
-        public async Task<ProductModel> GetProductBySlug(string slug)
+        public async Task<ProductDto> GetProductBySlug(string slug)
         {
             var product = await _productRepository.GetProductBySlug(slug);
             // var mapped = ObjectMapper.Mapper.Map<ProductModel>(product);
@@ -48,7 +48,7 @@ namespace AspnetRun.Application.Services
             return mapped;
         }
 
-        public async Task<List<ProductModel>> GetProductByName(string productName)
+        public async Task<List<ProductDto>> GetProductByName(string productName)
         {
             var productList = await _productRepository.GetProductByNameAsync(productName);
             // var mapped = ObjectMapper.Mapper.Map<IEnumerable<ProductModel>>(productList);
@@ -56,7 +56,7 @@ namespace AspnetRun.Application.Services
             return mapped;
         }
 
-        public async Task<List<ProductModel>> GetProductByCategory(int categoryId)
+        public async Task<List<ProductDto>> GetProductByCategory(int categoryId)
         {
             var productList = await _productRepository.GetProductByCategoryAsync(categoryId);
             // var mapped = ObjectMapper.Mapper.Map<IEnumerable<ProductModel>>(productList);
@@ -64,7 +64,7 @@ namespace AspnetRun.Application.Services
             return mapped;
         }
 
-        public async Task<ProductModel> Create(ProductModel productModel)
+        public async Task<ProductDto> Create(ProductDto productModel)
         {
             await ValidateProductIfExist(productModel);
 
@@ -82,7 +82,7 @@ namespace AspnetRun.Application.Services
             return newMappedEntity;
         }
 
-        public async Task Update(ProductModel productModel)
+        public async Task Update(ProductDto productModel)
         {
             ValidateProductIfNotExist(productModel);
             
@@ -98,7 +98,7 @@ namespace AspnetRun.Application.Services
             _logger.LogInformation($"Entity successfully updated - AspnetRunAppService");
         }
 
-        public async Task Delete(ProductModel productModel)
+        public async Task Delete(ProductDto productModel)
         {
             ValidateProductIfNotExist(productModel);
             var deletedProduct = await _productRepository.GetByIdAsync(productModel.Id);
@@ -109,14 +109,14 @@ namespace AspnetRun.Application.Services
             _logger.LogInformation($"Entity successfully deleted - AspnetRunAppService");
         }
 
-        private async Task ValidateProductIfExist(ProductModel productModel)
+        private async Task ValidateProductIfExist(ProductDto productModel)
         {
             var existingEntity = await _productRepository.GetByIdAsync(productModel.Id);
             if (existingEntity != null)
                 throw new ApplicationException($"{productModel.ToString()} with this id already exists");
         }
 
-        private void ValidateProductIfNotExist(ProductModel productModel)
+        private void ValidateProductIfNotExist(ProductDto productModel)
         {
             var existingEntity = _productRepository.GetByIdAsync(productModel.Id);
             if (existingEntity == null)

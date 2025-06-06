@@ -20,10 +20,10 @@ namespace AspnetRun.Application.Services
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public async Task<IEnumerable<CategoryModel>> GetCategoryList()
+        public async Task<IEnumerable<CategoryDto>> GetCategoryList()
         {
             var category = await _categoryRepository.GetAllAsync();
-            var mapped = ObjectMapper.Mapper.Map<IEnumerable<CategoryModel>>(category);
+            var mapped = ObjectMapper.Mapper.Map<IEnumerable<CategoryDto>>(category);
             return mapped;
         }        
         

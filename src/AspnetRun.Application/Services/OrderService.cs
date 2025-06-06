@@ -20,7 +20,7 @@ namespace AspnetRun.Application.Services
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public async Task<OrderModel> CheckOut(OrderModel orderModel)
+        public async Task<OrderDto> CheckOut(OrderDto orderModel)
         {            
             ValidateOrder(orderModel);
 
@@ -31,11 +31,11 @@ namespace AspnetRun.Application.Services
             var newEntity = await _orderRepository.AddAsync(mappedEntity);
             _logger.LogInformation($"Entity successfully added - AspnetRunAppService");
 
-            var newMappedEntity = ObjectMapper.Mapper.Map<OrderModel>(newEntity);
+            var newMappedEntity = ObjectMapper.Mapper.Map<OrderDto>(newEntity);
             return newMappedEntity;
         }
 
-        private void ValidateOrder(OrderModel orderModel)
+        private void ValidateOrder(OrderDto orderModel)
         {
             // TODO : apply validations - i.e. - customer has only 3 order or order item should be low than 5 etc..
             if (string.IsNullOrWhiteSpace(orderModel.UserName))

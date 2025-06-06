@@ -1,6 +1,6 @@
 ﻿namespace AspnetRun.Application.Models.Base
 {
-    public class BaseModel
+    public class BaseDto
     {
         public int Id { get; set; }
     }

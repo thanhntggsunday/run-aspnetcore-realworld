@@ -24,15 +24,15 @@ namespace AspnetRun.Application.Services
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }       
 
-        public async Task<WishlistModel> GetWishlistByUserName(string userName)
+        public async Task<WishlistDto> GetWishlistByUserName(string userName)
         {
             var wishlist = await GetExistingOrCreateNewWishlist(userName);
-            var wishlistModel = ObjectMapper.Mapper.Map<WishlistModel>(wishlist);
+            var wishlistModel = ObjectMapper.Mapper.Map<WishlistDto>(wishlist);
 
             foreach (var item in wishlist.ProductWishlists)
             {
                 var product = await _productRepository.GetProductByIdWithCategoryAsync(item.ProductId);
-                var productModel = ObjectMapper.Mapper.Map<ProductModel>(product);
+                var productModel = ObjectMapper.Mapper.Map<ProductDto>(product);
                 wishlistModel.Items.Add(productModel);
             }
 

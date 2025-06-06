@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace AspnetRun.Application.Models
 {
-    public class CompareModel : BaseModel
+    public class CartDto : BaseDto
     {
         public string? UserName { get; set; }
-        public List<ProductModel> Items { get; set; } = new List<ProductModel>();
+        public List<CartItemDto> Items { get; set; } = new List<CartItemDto>();
     }
 }
