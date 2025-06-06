@@ -13,6 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\AspnetRun.Domain\AspnetRun.Domain.csproj" />
+    <ProjectReference Include="..\..\AspnetRun.Shared\AspnetRun.Shared.csproj" />
     <ProjectReference Include="..\AspnetRun.Core\AspnetRun.Core.csproj" />
   </ItemGroup>
 
