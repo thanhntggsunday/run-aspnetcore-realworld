@@ -7,6 +7,7 @@ using AspnetRun.Core.Repositories;
 using AspnetRun.Application.Models;
 using AspnetRun.Application.Mapper;
 using AspnetRun.Application.Interfaces;
+using AspnetRun.Application.Extentions;
 
 namespace AspnetRun.Application.Services
 {
@@ -22,38 +23,44 @@ namespace AspnetRun.Application.Services
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public async Task<IEnumerable<ProductModel>> GetProductList()
+        public async Task<List<ProductModel>> GetProductList()
         {
             var productList = await _productRepository.GetProductListAsync();
-            var mapped = ObjectMapper.Mapper.Map<IEnumerable<ProductModel>>(productList);
+            // var mapped = ObjectMapper.Mapper.Map<List<ProductModel>>(productList.ToList());
+            var mapped = productList.ToList().ToProductModelList();
             return mapped;
         }
 
         public async Task<ProductModel> GetProductById(int productId)
         {
             var product = await _productRepository.GetByIdAsync(productId);
-            var mapped = ObjectMapper.Mapper.Map<ProductModel>(product);
+            // var mapped = ObjectMapper.Mapper.Map<ProductModel>(product);
+            var mapped = product.ToProductModel();
             return mapped;
         }
 
         public async Task<ProductModel> GetProductBySlug(string slug)
         {
             var product = await _productRepository.GetProductBySlug(slug);
-            var mapped = ObjectMapper.Mapper.Map<ProductModel>(product);
+            // var mapped = ObjectMapper.Mapper.Map<ProductModel>(product);
+            var mapped = product.ToProductModel();
+
             return mapped;
         }
 
-        public async Task<IEnumerable<ProductModel>> GetProductByName(string productName)
+        public async Task<List<ProductModel>> GetProductByName(string productName)
         {
             var productList = await _productRepository.GetProductByNameAsync(productName);
-            var mapped = ObjectMapper.Mapper.Map<IEnumerable<ProductModel>>(productList);
+            // var mapped = ObjectMapper.Mapper.Map<IEnumerable<ProductModel>>(productList);
+            var mapped = productList.ToList().ToProductModelList();
             return mapped;
         }
 
-        public async Task<IEnumerable<ProductModel>> GetProductByCategory(int categoryId)
+        public async Task<List<ProductModel>> GetProductByCategory(int categoryId)
         {
             var productList = await _productRepository.GetProductByCategoryAsync(categoryId);
-            var mapped = ObjectMapper.Mapper.Map<IEnumerable<ProductModel>>(productList);
+            // var mapped = ObjectMapper.Mapper.Map<IEnumerable<ProductModel>>(productList);
+            var mapped = productList.ToList().ToProductModelList();
             return mapped;
         }
 
@@ -61,14 +68,17 @@ namespace AspnetRun.Application.Services
         {
             await ValidateProductIfExist(productModel);
 
-            var mappedEntity = ObjectMapper.Mapper.Map<Product>(productModel);
+            // var mappedEntity = ObjectMapper.Mapper.Map<Product>(productModel);
+            var mappedEntity = productModel.ToProductEntity();
+
             if (mappedEntity == null)
                 throw new ApplicationException($"Entity could not be mapped.");
 
             var newEntity = await _productRepository.AddAsync(mappedEntity);
             _logger.LogInformation($"Entity successfully added - AspnetRunAppService");
 
-            var newMappedEntity = ObjectMapper.Mapper.Map<ProductModel>(newEntity);
+            // var newMappedEntity = ObjectMapper.Mapper.Map<ProductModel>(newEntity);
+            var newMappedEntity = newEntity.ToProductModel();
             return newMappedEntity;
         }
 
@@ -80,7 +90,9 @@ namespace AspnetRun.Application.Services
             if (editProduct == null)
                 throw new ApplicationException($"Entity could not be loaded.");
 
-            ObjectMapper.Mapper.Map<ProductModel, Product>(productModel, editProduct);
+            // ObjectMapper.Mapper.Map<ProductModel, Product>(productModel, editProduct);
+
+            editProduct = productModel.ToProductEntity();
 
             await _productRepository.UpdateAsync(editProduct);
             _logger.LogInformation($"Entity successfully updated - AspnetRunAppService");

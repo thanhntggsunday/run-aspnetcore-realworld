@@ -5,7 +5,7 @@ namespace AspnetRun.Web.ViewModels
 {
     public class CartViewModel : BaseViewModel
     {
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
         public List<CartItemViewModel> Items { get; set; } = new List<CartItemViewModel>();
 
         public decimal GrandTotal

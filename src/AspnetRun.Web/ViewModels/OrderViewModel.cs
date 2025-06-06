@@ -6,10 +6,10 @@ namespace AspnetRun.Web.ViewModels
 {
     public class OrderViewModel : BaseViewModel
     {
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
         [Required]
-        public AddressViewRequired BillingAddress { get; set; }
-        public AddressView ShippingAddress { get; set; }
+        public AddressViewRequired? BillingAddress { get; set; }
+        public AddressView? ShippingAddress { get; set; }
         public PaymentMethodView PaymentMethod { get; set; }
         public int Status { get; set; } = 1; // Processing
 
@@ -22,7 +22,8 @@ namespace AspnetRun.Web.ViewModels
                 decimal grandTotal = 0;
                 foreach (var item in Items)
                 {
-                    grandTotal += item.TotalPrice;
+                    decimal? totalPrice = item.TotalPrice;
+                    grandTotal += totalPrice.Value;
                 }
 
                 return grandTotal;
@@ -33,39 +34,39 @@ namespace AspnetRun.Web.ViewModels
     public class AddressViewRequired
     {
         [Required]
-        public string FirstName { get; set; }
+        public string? FirstName { get; set; }
         [Required]
-        public string LastName { get; set; }
+        public string? LastName { get; set; }
         [Required]
-        public string EmailAddress { get; set; }
+        public string? EmailAddress { get; set; }
         [Required]
-        public string PhoneNo { get; set; }
+        public string? PhoneNo { get; set; }
         [Required]
-        public string CompanyName { get; set; }
+        public string? CompanyName { get; set; }
         [Required]
-        public string AddressLine { get; set; }
+        public string? AddressLine { get; set; }
         [Required]
-        public string Country { get; set; }
+        public string? Country { get; set; }
         [Required]
-        public string City { get; set; }
+        public string? City { get; set; }
         [Required]
-        public string State { get; set; }
+        public string? State { get; set; }
         [Required]
-        public string ZipCode { get; set; }
+        public string? ZipCode { get; set; }
     }
 
     public class AddressView
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailAddress { get; set; }
-        public string PhoneNo { get; set; }
-        public string CompanyName { get; set; }
-        public string AddressLine { get; set; }
-        public string Country { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string ZipCode { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+        public string? EmailAddress { get; set; }
+        public string? PhoneNo { get; set; }
+        public string? CompanyName { get; set; }
+        public string? AddressLine { get; set; }
+        public string? Country { get; set; }
+        public string? City { get; set; }
+        public string? State { get; set; }
+        public string? ZipCode { get; set; }
     }
 
     public enum PaymentMethodView

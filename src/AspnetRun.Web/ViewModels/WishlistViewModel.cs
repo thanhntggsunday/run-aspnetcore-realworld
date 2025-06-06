@@ -5,7 +5,7 @@ namespace AspnetRun.Web.ViewModels
 {
     public class WishlistViewModel : BaseViewModel
     {
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
         public List<ProductViewModel> Items { get; set; } = new List<ProductViewModel>();
     }
 }

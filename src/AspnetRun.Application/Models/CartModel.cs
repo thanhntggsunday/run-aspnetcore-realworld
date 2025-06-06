@@ -5,7 +5,7 @@ namespace AspnetRun.Application.Models
 {
     public class CartModel : BaseModel
     {
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
         public List<CartItemModel> Items { get; set; } = new List<CartItemModel>();
     }
 }

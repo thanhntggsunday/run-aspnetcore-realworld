@@ -1,45 +1,133 @@
-﻿using System;
+﻿using AspnetRun.Application.Interfaces;
+using AspnetRun.Application.Services;
+using AspnetRun.Core.Configuration;
+using AspnetRun.Core.Interfaces;
+using AspnetRun.Core.Repositories;
+using AspnetRun.Core.Repositories.Base;
 using AspnetRun.Infrastructure.Data;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using AspnetRun.Infrastructure.Logging;
+using AspnetRun.Infrastructure.Repository;
+using AspnetRun.Infrastructure.Repository.Base;
+using AspnetRun.Web.HealthChecks;
+using AspnetRun.Web.Interfaces;
+using AspnetRun.Web.Services;
+using AutoMapper;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 
-namespace AspnetRun.Web
+var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+var configuration = builder.Configuration;
+
+// **Đăng ký các dịch vụ của ứng dụng**
+builder.Services.Configure<AspnetRunSettings>(configuration);
+builder.Services.AddDbContext<AspnetRunContext>(c =>
+    c.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
+                   x => x.MigrationsAssembly("AspnetRun.Web")));
+
+// Add services to the container.
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+//builder.Services.AddDbContext<AspnetRunContext>(options =>
+//    options.UseSqlServer(connectionString));
+
+
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<AspnetRunContext>();
+builder.Services.AddRazorPages();
+
+//
+// Cấu hình cookie
+builder.Services.Configure<CookiePolicyOptions>(options =>
 {
-    public class Program
+    options.CheckConsentNeeded = context => true;
+    options.MinimumSameSitePolicy = SameSiteMode.None;
+});
+
+//builder.Services.AddDefaultIdentity<IdentityUser>()
+//    .AddDefaultUI()
+//    .AddEntityFrameworkStores<AspnetRunContext>();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 6;
+    options.Password.RequiredUniqueChars = 1;
+});
+
+// **Đăng ký các lớp Repository và Services**
+services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
+services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+services.AddScoped<IProductRepository, ProductRepository>();
+services.AddScoped<ICategoryRepository, CategoryRepository>();
+services.AddScoped<ICartRepository, CartRepository>();
+services.AddScoped<IWishlistRepository, WishlistRepository>();
+services.AddScoped<ICompareRepository, CompareRepository>();
+services.AddScoped<IOrderRepository, OrderRepository>();
+
+services.AddScoped<IProductService, ProductService>();
+services.AddScoped<ICategoryService, CategoryService>();
+services.AddScoped<ICartService, CartService>();
+services.AddScoped<IWishlistService, WishListService>();
+services.AddScoped<ICompareService, CompareService>();
+services.AddScoped<IOrderService, OrderService>();
+
+services.AddScoped<IIndexPageService, IndexPageService>();
+services.AddScoped<IProductPageService, ProductPageService>();
+services.AddScoped<ICategoryPageService, CategoryPageService>();
+services.AddScoped<ICartComponentService, CartComponentService>();
+services.AddScoped<IWishlistPageService, WishlistPageService>();
+services.AddScoped<IComparePageService, ComparePageService>();
+services.AddScoped<ICheckOutPageService, CheckOutPageService>();
+
+services.AddAutoMapper(typeof(Program));
+services.AddHttpContextAccessor();
+services.AddHealthChecks().AddCheck<IndexPageHealthCheck>("home_page_health_check");
+
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseMigrationsEndPoint();
+}
+else
+{
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
+}
+
+//app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseCookiePolicy();
+app.UseAuthentication();
+app.UseRouting();
+app.UseAuthorization();
+
+app.MapRazorPages();
+
+// seed data
+using (var scope = app.Services.CreateScope())
+{
+    var svc = scope.ServiceProvider;
+    var loggerFactory = svc.GetRequiredService<ILoggerFactory>();
+
+    try
     {
-        public static void Main(string[] args)
-        {
-            var host = CreateWebHostBuilder(args).Build();
-
-            SeedDatabase(host);
-
-            host.Run();
-        }        
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
-
-        private static void SeedDatabase(IWebHost host)
-        {
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-
-                try
-                {
-                    var aspnetRunContext = services.GetRequiredService<AspnetRunContext>();
-                    AspnetRunContextSeed.SeedAsync(aspnetRunContext, loggerFactory).Wait();
-                }
-                catch (Exception exception)
-                {
-                    var logger = loggerFactory.CreateLogger<Program>();
-                    logger.LogError(exception, "An error occurred seeding the DB.");
-                }
-            }
-        }
+        var aspnetRunContext = svc.GetRequiredService<AspnetRunContext>();
+        AspnetRunContextSeed.SeedAsync(aspnetRunContext, loggerFactory).Wait();
+    }
+    catch (Exception exception)
+    {
+        var logger = loggerFactory.CreateLogger<Program>();
+        logger.LogError(exception, "An error occurred seeding the DB.");
     }
 }
+
+app.Run();

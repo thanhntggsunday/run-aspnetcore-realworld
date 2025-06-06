@@ -8,7 +8,7 @@ namespace AspnetRun.Core.Entities
 {
     public class Wishlist : Entity
     {        
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
         public List<ProductWishlist> ProductWishlists { get; set; } = new List<ProductWishlist>();
 
         public void AddItem(int productId)

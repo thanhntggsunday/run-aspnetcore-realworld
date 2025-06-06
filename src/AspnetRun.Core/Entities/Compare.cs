@@ -6,7 +6,7 @@ namespace AspnetRun.Core.Entities
 {
     public class Compare : Entity
     {        
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
         public List<ProductCompare> ProductCompares { get; set; } = new List<ProductCompare>();
 
         public void AddItem(int productId)
