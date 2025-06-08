@@ -1,7 +1,7 @@
 ﻿using AspnetRun.Web.ViewModels;
 using System.Threading.Tasks;
 
-namespace AspnetRun.Web.Interfaces
+namespace AspnetRun.Web.Data.Interfaces
 {
     public interface IComparePageService
     {

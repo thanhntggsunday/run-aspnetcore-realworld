@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using AspnetRun.Web.Interfaces;
 using AspnetRun.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Authorization;
+using AspnetRun.Web.Data.Interfaces;
 
 namespace AspnetRun.Web.Pages
 {

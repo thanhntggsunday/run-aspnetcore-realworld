@@ -2,7 +2,7 @@
 using AspnetRun.Web.ViewModels;
 using NetMvc.Cms.Common.ViewModel.Common;
 
-namespace AspnetRun.Web.Interfaces
+namespace AspnetRun.Web.Data.Interfaces
 {
     public interface IProductPageService
     {

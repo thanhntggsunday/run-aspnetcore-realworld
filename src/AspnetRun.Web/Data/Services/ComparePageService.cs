@@ -1,5 +1,5 @@
 ﻿using AspnetRun.Application.Interfaces;
-using AspnetRun.Web.Interfaces;
+using AspnetRun.Web.Data.Interfaces;
 using AspnetRun.Web.ViewModels;
 using AutoMapper;
 

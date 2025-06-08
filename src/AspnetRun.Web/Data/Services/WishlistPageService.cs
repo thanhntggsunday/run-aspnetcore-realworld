@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AspnetRun.Application.Interfaces;
-using AspnetRun.Web.Interfaces;
+using AspnetRun.Web.Data.Interfaces;
 using AspnetRun.Web.ViewModels;
 using AutoMapper;
 using Microsoft.Extensions.Logging;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AspnetRun.Web.ViewModels;
 
-namespace AspnetRun.Web.Interfaces
+namespace AspnetRun.Web.Data.Interfaces
 {
     public interface IWishlistPageService
     {
