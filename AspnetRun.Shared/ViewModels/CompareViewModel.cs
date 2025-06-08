@@ -1,11 +1,11 @@
-﻿using AspnetRun.Web.ViewModels.Base;
-using System.Collections.Generic;
+﻿using AspnetRun.Application.Models;
+using AspnetRun.Shared;
 
 namespace AspnetRun.Web.ViewModels
 {
-    public class CompareViewModel : BaseViewModel
+    public class CompareViewModel : TransactionalInformation
     {
         public string? UserName { get; set; }
-        public List<ProductViewModel> Items { get; set; } = new List<ProductViewModel>();
+        public List<ProductDto> Items { get; set; } = new List<ProductDto>();
     }
 }

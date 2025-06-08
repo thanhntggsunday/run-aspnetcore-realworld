@@ -1,8 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using AspnetRun.Application.Interfaces;
-using AspnetRun.Application.Mapper;
+﻿using AspnetRun.Application.Interfaces;
 using AspnetRun.Application.Models;
 using AspnetRun.Core.Entities;
 using AspnetRun.Core.Interfaces;

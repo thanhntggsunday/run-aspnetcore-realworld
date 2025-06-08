@@ -1,14 +1,18 @@
-﻿using AspnetRun.Web.ViewModels.Base;
+﻿using AspnetRun.Application.Models;
+using AspnetRun.Shared;
 
 namespace AspnetRun.Web.ViewModels
 {
-    public class CartItemViewModel : BaseViewModel
+    public class CartItemViewModel : TransactionalInformation
     {
-        public int Quantity { get; set; }
-        public string? Color { get; set; }
-        public decimal UnitPrice { get; set; }
-        public decimal TotalPrice { get; set; }
-        public int ProductId { get; set; }
-        public ProductViewModel? Product { get; set; }
+       public CartItemDto Data { get; set; }
+        public CartItemViewModel()
+        {
+            Data = new CartItemDto();
+        }
+        public CartItemViewModel(CartItemDto data)
+        {
+            Data = data;
+        }
     }
 }

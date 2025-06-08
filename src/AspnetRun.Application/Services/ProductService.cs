@@ -27,7 +27,7 @@ namespace AspnetRun.Application.Services
         {
             var productList = await _productRepository.GetProductListAsync();
             // var mapped = ObjectMapper.Mapper.Map<List<ProductModel>>(productList.ToList());
-            var mapped = productList.ToList().ToProductModelList();
+            var mapped = productList.ToList().ToProductDtoList();
             return mapped;
         }
 
@@ -35,7 +35,7 @@ namespace AspnetRun.Application.Services
         {
             var product = await _productRepository.GetByIdAsync(productId);
             // var mapped = ObjectMapper.Mapper.Map<ProductModel>(product);
-            var mapped = product.ToProductModel();
+            var mapped = product.ToProductDto();
             return mapped;
         }
 
@@ -43,7 +43,7 @@ namespace AspnetRun.Application.Services
         {
             var product = await _productRepository.GetProductBySlug(slug);
             // var mapped = ObjectMapper.Mapper.Map<ProductModel>(product);
-            var mapped = product.ToProductModel();
+            var mapped = product.ToProductDto();
 
             return mapped;
         }
@@ -52,7 +52,7 @@ namespace AspnetRun.Application.Services
         {
             var productList = await _productRepository.GetProductByNameAsync(productName);
             // var mapped = ObjectMapper.Mapper.Map<IEnumerable<ProductModel>>(productList);
-            var mapped = productList.ToList().ToProductModelList();
+            var mapped = productList.ToList().ToProductDtoList();
             return mapped;
         }
 
@@ -60,7 +60,7 @@ namespace AspnetRun.Application.Services
         {
             var productList = await _productRepository.GetProductByCategoryAsync(categoryId);
             // var mapped = ObjectMapper.Mapper.Map<IEnumerable<ProductModel>>(productList);
-            var mapped = productList.ToList().ToProductModelList();
+            var mapped = productList.ToList().ToProductDtoList();
             return mapped;
         }
 
@@ -78,7 +78,7 @@ namespace AspnetRun.Application.Services
             _logger.LogInformation($"Entity successfully added - AspnetRunAppService");
 
             // var newMappedEntity = ObjectMapper.Mapper.Map<ProductModel>(newEntity);
-            var newMappedEntity = newEntity.ToProductModel();
+            var newMappedEntity = newEntity.ToProductDto();
             return newMappedEntity;
         }
 

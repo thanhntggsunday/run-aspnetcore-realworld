@@ -1,11 +1,10 @@
-﻿using AspnetRun.Web.ViewModels.Base;
+﻿using AspnetRun.Application.Models;
+using AspnetRun.Shared;
 
 namespace AspnetRun.Web.ViewModels
 {
-    public class CategoryViewModel : BaseViewModel
+    public class CategoryViewModel : TransactionalInformation
     {
-        public string? Name { get; set; }
-        public string? Description { get; set; }
-        public string? ImageName { get; set; }
+        public CategoryDto Data { get; set; } = new CategoryDto();
     }
 }

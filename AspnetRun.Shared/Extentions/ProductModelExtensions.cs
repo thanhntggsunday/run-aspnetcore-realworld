@@ -1,16 +1,11 @@
 ﻿using AspnetRun.Application.Models;
 using AspnetRun.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AspnetRun.Application.Extentions
 {
     public static class ProductModelExtensions
     {
-        public static ProductDto ToProductModel(this Product product)
+        public static ProductDto ToProductDto(this Product product)
         {
             if (product == null) return null;
 
@@ -23,7 +18,7 @@ namespace AspnetRun.Application.Extentions
                 ImageFile = product.ImageFile,
                 CategoryId = product.CategoryId,
                 Slug = product.Slug,
-                Star= product.Star,
+                Star = product.Star,
                 Summary = product.Summary,
                 UnitsInStock = product.UnitsInStock,
                 Category = product.Category != null ? new CategoryDto
@@ -36,15 +31,15 @@ namespace AspnetRun.Application.Extentions
             };
         }
 
-        public static List<ProductDto> ToProductModelList(this List<Product> products)
+        public static List<ProductDto> ToProductDtoList(this List<Product> products)
         {
-           var result = new List<ProductDto>();
+            var result = new List<ProductDto>();
 
             if (products == null || !products.Any()) return result;
 
             foreach (var product in products)
             {
-                result.Add(product.ToProductModel());
+                result.Add(product.ToProductDto());
             }
 
             return result;

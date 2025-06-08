@@ -1,8 +1,9 @@
-﻿using AspnetRun.Web.ViewModels.Base;
+﻿using AspnetRun.Application.Models;
+using AspnetRun.Shared;
 
 namespace AspnetRun.Web.ViewModels
 {
-    public class ProductViewModel : BaseViewModel
+    public class ProductViewModel : TransactionalInformation
     {
         public string? Name { get; set; }
         public string? Slug { get; set; }
@@ -13,6 +14,6 @@ namespace AspnetRun.Web.ViewModels
         public int? UnitsInStock { get; set; }
         public double Star { get; set; }
         public int? CategoryId { get; set; }
-        public CategoryViewModel? Category { get; set; }
+        public CategoryDto Category { get; set; } = new CategoryDto();
     }
 }

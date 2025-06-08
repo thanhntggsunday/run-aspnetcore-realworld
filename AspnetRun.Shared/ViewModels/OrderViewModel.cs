@@ -1,10 +1,9 @@
-﻿using AspnetRun.Web.ViewModels.Base;
-using System.Collections.Generic;
+﻿using AspnetRun.Shared;
 using System.ComponentModel.DataAnnotations;
 
 namespace AspnetRun.Web.ViewModels
 {
-    public class OrderViewModel : BaseViewModel
+    public class OrderViewModel : TransactionalInformation
     {
         public string? UserName { get; set; }
         [Required]
