@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AspnetRun.Web.Services
+namespace AspnetRun.Web.Data.Services
 {
     public class IndexPageService : IIndexPageService
     {

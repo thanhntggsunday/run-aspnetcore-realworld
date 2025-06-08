@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
-namespace AspnetRun.Web.Services
+namespace AspnetRun.Web.Data.Services
 {
     public class CheckOutPageService : ICheckOutPageService
     {

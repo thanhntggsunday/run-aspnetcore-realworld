@@ -5,7 +5,7 @@ using AspnetRun.Web.ViewModels;
 using AutoMapper;
 using NetMvc.Cms.Common.ViewModel.Common;
 
-namespace AspnetRun.Web.Services
+namespace AspnetRun.Web.Data.Services
 {
     public class CategoryPageService : ICategoryPageService
     {

@@ -3,7 +3,7 @@ using AspnetRun.Web.Interfaces;
 using AspnetRun.Web.ViewModels;
 using AutoMapper;
 
-namespace AspnetRun.Web.Services
+namespace AspnetRun.Web.Data.Services
 {
     public class ComparePageService : IComparePageService
     {

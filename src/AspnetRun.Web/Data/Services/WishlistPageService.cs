@@ -6,7 +6,7 @@ using AspnetRun.Web.ViewModels;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
 
-namespace AspnetRun.Web.Services
+namespace AspnetRun.Web.Data.Services
 {
     public class WishlistPageService : IWishlistPageService
     {
