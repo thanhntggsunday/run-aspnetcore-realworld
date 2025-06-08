@@ -14,6 +14,7 @@ using AspnetRun.Web.HealthChecks;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -35,6 +36,13 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<AspnetRunContext>();
 builder.Services.AddRazorPages();
+
+builder.Services.AddLogging();
+
+
+// Cấu hình Serilog
+builder.Services.AddSerilog(config =>
+    config.WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day));
 
 //
 // cookie
@@ -108,6 +116,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.UseSerilogRequestLogging(); // Ghi log request
 
 // seed data
 using (var scope = app.Services.CreateScope())

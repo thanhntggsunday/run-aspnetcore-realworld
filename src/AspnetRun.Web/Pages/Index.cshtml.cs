@@ -14,9 +14,12 @@ namespace AspnetRun.Web.Pages
     {
         private readonly IIndexPageService _indexPageService;
         private readonly ICartComponentService _cartComponentService;
+        private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(IIndexPageService indexPageService, ICartComponentService cartComponentService)
+        public IndexModel(ILogger<IndexModel> logger, IIndexPageService indexPageService, ICartComponentService cartComponentService)
         {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
             _indexPageService = indexPageService ?? throw new ArgumentNullException(nameof(indexPageService));
             _cartComponentService = cartComponentService ?? throw new ArgumentNullException(nameof(cartComponentService));
         }
@@ -26,7 +29,9 @@ namespace AspnetRun.Web.Pages
 
         public async Task OnGetAsync()
         {
-            ProductList = await _indexPageService.GetProducts();              
+            ProductList = await _indexPageService.GetProducts();
+
+            _logger.LogInformation("Index page loaded with {ProductCount} products.", ProductList.Data.Count);
         }
 
         public async Task<IActionResult> OnPostRemoveToCartAsync(int cartId, int cartItemId)
