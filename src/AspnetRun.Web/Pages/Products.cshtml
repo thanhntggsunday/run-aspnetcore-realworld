@@ -97,9 +97,9 @@
                 <!-- Shop Product Wrap Start -->
                 <div class="shop-product-wrap grid row">
                     
-                    @if (Model.ProductList.Any())
+                    @if (Model.ProductList.Data.Any())
                     {
-                        foreach (var item in Model.ProductList)
+                        foreach (var item in Model.ProductList.Data)
                         {
                             <div class="col-xl-3 col-lg-4 col-md-6 col-12 pb-30 pt-10">
 

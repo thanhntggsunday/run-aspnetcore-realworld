@@ -53,11 +53,11 @@
                     <div class="head-content">
 
                         <div class="category-title">
-                            <a href="#" class="cat">@Model.Product.Category.Name</a>
-                            <h5 class="title">@Model.Product.Name</h5>
+                            <a href="#" class="cat">@Model.Product.Data.Category?.Name</a>
+                            <h5 class="title">@Model.Product.Data.Name</h5>
                         </div>
 
-                        <h5 class="price">$@Model.Product.UnitPrice</h5>
+                        <h5 class="price">$@Model.Product.Data.UnitPrice</h5>
 
                     </div>
 
@@ -72,7 +72,7 @@
                         </div>
 
                         <div class="desc">
-                            <p>@Model.Product.Description</p>
+                            <p>@Model.Product.Data.Description</p>
                         </div>
 
                         <span class="availability">Availability: <span>In Stock</span></span>
@@ -100,16 +100,16 @@
                            
                             <form asp-page-handler="AddToCart" method="post" name="addToCartForm" id="add_cart_form">
                                 <a href="javascript:;" onclick="parentNode.submit();" class="add-to-cart"><i class="ti-shopping-cart"></i><span>ADD TO CART</span></a>
-                                <input type="hidden" asp-for="@Model.Product.Id" name="productId" />
+                                <input type="hidden" asp-for="@Model.Product.Data.Id" name="productId" />
                             </form>
                             <div class="wishlist-compare">
                                 <form asp-page-handler="AddToCompare" method="post" name="AddToCompareForm" id="add_compare_form">
                                     <a href="javascript:;" onclick="parentNode.submit();" data-tooltip="Compare"><i class="ti-control-shuffle"></i></a>
-                                    <input type="hidden" asp-for="@Model.Product.Id" name="productId" />
+                                    <input type="hidden" asp-for="@Model.Product.Data.Id" name="productId" />
                                 </form>
                                 <form asp-page-handler="AddToWishlist" method="post" name="AddToWishlistForm" id="add_wishlist_form">
                                     <a href="javascript:;" onclick="parentNode.submit();" data-tooltip="Wishlist"><i class="ti-heart"></i></a>
-                                    <input type="hidden" asp-for="@Model.Product.Id" name="productId" />
+                                    <input type="hidden" asp-for="@Model.Product.Data.Id" name="productId" />
                                 </form>
                             </div>
 

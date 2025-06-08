@@ -5,7 +5,7 @@ namespace AspnetRun.Web.ViewModels
 {
     public class WishlistViewModel : TransactionalInformation
     {
-        public string? UserName { get; set; }
-        public List<ProductDto> Items { get; set; } = new List<ProductDto>();
+        public WishlistDto Data { get; set; } = new WishlistDto();
+       
     }
 }

@@ -1,13 +1,10 @@
 ﻿using AspnetRun.Application.Interfaces;
-using AspnetRun.Application.Mapper;
 using AspnetRun.Application.Models;
 using AspnetRun.Core.Entities;
 using AspnetRun.Core.Interfaces;
 using AspnetRun.Core.Repositories;
 using AspnetRun.Core.Specifications;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
+using AspnetRun.Shared.Extentions;
 
 namespace AspnetRun.Application.Services
 {
@@ -27,12 +24,12 @@ namespace AspnetRun.Application.Services
         public async Task<WishlistDto> GetWishlistByUserName(string userName)
         {
             var wishlist = await GetExistingOrCreateNewWishlist(userName);
-            var wishlistModel = ObjectMapper.Mapper.Map<WishlistDto>(wishlist);
+            var wishlistModel = wishlist.ToWishlistDto();
 
             foreach (var item in wishlist.ProductWishlists)
             {
                 var product = await _productRepository.GetProductByIdWithCategoryAsync(item.ProductId);
-                var productModel = ObjectMapper.Mapper.Map<ProductDto>(product);
+                var productModel = product.ToProductDto();
                 wishlistModel.Items.Add(productModel);
             }
 

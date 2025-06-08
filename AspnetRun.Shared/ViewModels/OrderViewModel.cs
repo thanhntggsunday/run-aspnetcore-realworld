@@ -5,6 +5,7 @@ namespace AspnetRun.Web.ViewModels
 {
     public class OrderViewModel : TransactionalInformation
     {
+        public int Id { get; set; }
         public string? UserName { get; set; }
         [Required]
         public AddressViewRequired? BillingAddress { get; set; }
@@ -12,7 +13,7 @@ namespace AspnetRun.Web.ViewModels
         public PaymentMethodView PaymentMethod { get; set; }
         public int Status { get; set; } = 1; // Processing
 
-        public List<OrderItemView> Items { get; set; } = new List<OrderItemView>();
+        public List<OrderItemViewModel> Items { get; set; } = new List<OrderItemViewModel>();
 
         public decimal GrandTotal
         {
@@ -21,7 +22,7 @@ namespace AspnetRun.Web.ViewModels
                 decimal grandTotal = 0;
                 foreach (var item in Items)
                 {
-                    decimal? totalPrice = item.TotalPrice;
+                    decimal? totalPrice = item.Data.TotalPrice;
                     grandTotal += totalPrice.Value;
                 }
 

@@ -17,7 +17,7 @@
                             <tr>
                                 <td class="first-column">Product</td>
 
-                                @foreach (var item in Model.CompareViewModel.Items)
+                                @foreach (var item in Model.CompareViewModel.Data.Items)
                                 {
                                     <td class="product-image-title">
                                         <a asp-page="ProductDetail" asp-route-slug="@item.Slug" class="image"><img src="assets/images/product/@item.ImageFile" alt="Compare Product"></a>
@@ -30,7 +30,7 @@
                             <tr>
                                 <td class="first-column">Description</td>
 
-                                @foreach (var item in Model.CompareViewModel.Items)
+                                @foreach (var item in Model.CompareViewModel.Data.Items)
                                 {
                                     <td class="pro-desc"><p>@item.Summary</p></td>
                                 }
@@ -39,7 +39,7 @@
                             <tr>
                                 <td class="first-column">Price</td>
 
-                                @foreach (var item in Model.CompareViewModel.Items)
+                                @foreach (var item in Model.CompareViewModel.Data.Items)
                                 {
                                     <td class="pro-price">$@item.UnitPrice</td>
                                 }
@@ -48,7 +48,7 @@
                             <tr>
                                 <td class="first-column">Color</td>
 
-                                @foreach (var item in Model.CompareViewModel.Items)
+                                @foreach (var item in Model.CompareViewModel.Data.Items)
                                 {
                                     <td class="pro-color">Black</td>
                                 }
@@ -57,7 +57,7 @@
                             <tr>
                                 <td class="first-column">Stock</td>
 
-                                @foreach (var item in Model.CompareViewModel.Items)
+                                @foreach (var item in Model.CompareViewModel.Data.Items)
                                 {
                                     <td class="pro-stock">
                                         @if (item.UnitsInStock > 0)
@@ -75,7 +75,7 @@
                             <tr>
                                 <td class="first-column">Add to cart</td>
 
-                                @foreach (var item in Model.CompareViewModel.Items)
+                                @foreach (var item in Model.CompareViewModel.Data.Items)
                                 {
                                     <td class="pro-addtocart">
                                         <form asp-page-handler="AddToCart" method="post">
@@ -89,12 +89,12 @@
                             <tr>
                                 <td class="first-column">Delete</td>
 
-                                @foreach (var item in Model.CompareViewModel.Items)
+                                @foreach (var item in Model.CompareViewModel.Data.Items)
                                 {
                                     <td class="pro-remove">
                                         <form asp-page-handler="removefromcompare" method="post">
                                             <button><i class="fa fa-trash-o"></i></button>
-                                            <input type="hidden" asp-for="@Model.CompareViewModel.Id" name="compareId" />
+                                            <input type="hidden" asp-for="@Model.CompareViewModel.Data.Id" name="compareId" />
                                             <input type="hidden" asp-for="@item.Id" name="productId" />
                                         </form>
                                     </td>
@@ -104,7 +104,7 @@
                             <tr>
                                 <td class="first-column">Rating</td>
 
-                                @foreach (var item in Model.CompareViewModel.Items)
+                                @foreach (var item in Model.CompareViewModel.Data.Items)
                                 {
                                     <td class="pro-ratting">
                                         <i class="fa fa-star"></i>

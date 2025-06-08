@@ -23,7 +23,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.WishlistViewModel.Items)
+                            @foreach (var item in Model.WishlistViewModel.Data.Items)
                             {
                                 <tr>
                                     <td class="pro-thumbnail"><a asp-page="ProductDetail" asp-route-slug="@item.Slug"><img src="assets/images/product/@item.ImageFile" alt="Product"></a></td>
@@ -41,7 +41,7 @@
                                     <td class="pro-remove">
                                         <form asp-page-handler="removefromwishlist" method="post">
                                             <a href="javascript:;" onclick="parentNode.submit();"><i class="fa fa-trash-o"></i></a>
-                                            <input type="hidden" asp-for="@Model.WishlistViewModel.Id" name="wishlistId" />
+                                            <input type="hidden" asp-for="@Model.WishlistViewModel.Data.Id" name="wishlistId" />
                                             <input type="hidden" asp-for="@item.Id" name="productId" />
                                         </form>
                                     </td>

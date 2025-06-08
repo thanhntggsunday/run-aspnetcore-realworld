@@ -4,6 +4,7 @@ namespace AspnetRun.Web.ViewModels
 {
     public class CartViewModel : TransactionalInformation
     {
+        public int Id { get; set; }
         public string? UserName { get; set; }
         public List<CartItemViewModel> Items { get; set; } = new List<CartItemViewModel>();
 

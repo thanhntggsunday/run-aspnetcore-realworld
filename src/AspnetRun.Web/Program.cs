@@ -14,13 +14,12 @@ using AspnetRun.Web.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 var configuration = builder.Configuration;
 
-// **Đăng ký các dịch vụ của ứng dụng**
+// **Registry services**
 builder.Services.Configure<AspnetRunSettings>(configuration);
 builder.Services.AddDbContext<AspnetRunContext>(c =>
     c.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
@@ -31,7 +30,6 @@ builder.Services.AddDbContext<AspnetRunContext>(c =>
 //builder.Services.AddDbContext<AspnetRunContext>(options =>
 //    options.UseSqlServer(connectionString));
 
-
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -39,7 +37,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddRazorPages();
 
 //
-// Cấu hình cookie
+// cookie
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
     options.CheckConsentNeeded = context => true;
@@ -60,7 +58,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredUniqueChars = 1;
 });
 
-// **Đăng ký các lớp Repository và Services**
+// **Registry Repository and Services**
 services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
 services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 services.AddScoped<IProductRepository, ProductRepository>();
@@ -88,7 +86,6 @@ services.AddScoped<ICheckOutPageService, CheckOutPageService>();
 services.AddAutoMapper(typeof(Program));
 services.AddHttpContextAccessor();
 services.AddHealthChecks().AddCheck<IndexPageHealthCheck>("home_page_health_check");
-
 
 var app = builder.Build();
 

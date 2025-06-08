@@ -4,6 +4,7 @@ using AspnetRun.Core.Entities;
 using AspnetRun.Core.Interfaces;
 using AspnetRun.Core.Repositories;
 using AspnetRun.Core.Specifications;
+using AspnetRun.Shared.Extentions;
 
 namespace AspnetRun.Application.Services
 {
@@ -23,16 +24,16 @@ namespace AspnetRun.Application.Services
         public async Task<CartDto> GetCartByUserName(string userName)
         {
             var cart = await GetExistingOrCreateNewCart(userName);
-            var cartModel = ObjectMapper.Mapper.Map<CartDto>(cart);
+            var cartModel = cart.ToCartDto();
 
             if (cart.Items.Any(c => c.Product == null)) // If product can not loaded from razor page, we apply manuel mapping.
             {
                 cartModel.Items.Clear();
                 foreach (var item in cart.Items)
                 {
-                    var cartItemModel = ObjectMapper.Mapper.Map<CartItemDto>(item);
+                    var cartItemModel = item.ToCartItemDto();
                     var product = await _productRepository.GetProductByIdWithCategoryAsync(item.ProductId);
-                    var productModel = ObjectMapper.Mapper.Map<ProductDto>(product);
+                    var productModel = product.ToProductDto();
                     cartItemModel.Product = productModel;
                     cartModel.Items.Add(cartItemModel);
                 }

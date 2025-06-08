@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using AspnetRun.Application.Models;
 using AspnetRun.Web.Interfaces;
 using AspnetRun.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using NetMvc.Cms.Common.ViewModel.Common;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AspnetRun.Web.Pages
 {
@@ -19,7 +21,7 @@ namespace AspnetRun.Web.Pages
             _cartComponentService = cartComponentService ?? throw new ArgumentNullException(nameof(cartComponentService));
         }
 
-        public IEnumerable<ProductViewModel> ProductList { get; set; } = new List<ProductViewModel>();
+        public ListViewModel<ProductDto> ProductList { get; set; } = new ListViewModel<ProductDto>();
         public CategoryViewModel CategoryModel { get; set; } = new CategoryViewModel();
 
         public async Task OnGetAsync()

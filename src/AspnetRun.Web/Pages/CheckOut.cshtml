@@ -232,7 +232,7 @@
                                             {
                                                 foreach (var cartItem in Model.CartViewModel.Items)
                                                 {
-                                                    <li>@cartItem.Product.Name X @cartItem.Quantity <span>$@cartItem.TotalPrice</span></li>
+                                                    <li>@cartItem.Data.Product?.Name X @cartItem.Data.Quantity <span>$@cartItem.Data.TotalPrice</span></li>
                                                 }
                                             }
                                         </ul>

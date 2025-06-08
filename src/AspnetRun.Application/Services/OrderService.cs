@@ -1,11 +1,9 @@
 ﻿using AspnetRun.Application.Interfaces;
-using AspnetRun.Application.Mapper;
 using AspnetRun.Application.Models;
 using AspnetRun.Core.Entities;
 using AspnetRun.Core.Interfaces;
 using AspnetRun.Core.Repositories;
-using System;
-using System.Threading.Tasks;
+using AspnetRun.Shared.Extentions;
 
 namespace AspnetRun.Application.Services
 {
@@ -24,14 +22,14 @@ namespace AspnetRun.Application.Services
         {            
             ValidateOrder(orderModel);
 
-            var mappedEntity = ObjectMapper.Mapper.Map<Order>(orderModel);
+            var mappedEntity = orderModel.ToOrderEntity();
             if (mappedEntity == null)
                 throw new ApplicationException($"Entity could not be mapped.");
 
             var newEntity = await _orderRepository.AddAsync(mappedEntity);
             _logger.LogInformation($"Entity successfully added - AspnetRunAppService");
 
-            var newMappedEntity = ObjectMapper.Mapper.Map<OrderDto>(newEntity);
+            var newMappedEntity = newEntity.ToOrderDto();
             return newMappedEntity;
         }
 

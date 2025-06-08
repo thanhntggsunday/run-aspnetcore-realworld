@@ -1,11 +1,8 @@
-﻿using AspnetRun.Application.Mapper;
-using AspnetRun.Application.Interfaces;
+﻿using AspnetRun.Application.Interfaces;
 using AspnetRun.Core.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using AspnetRun.Core.Repositories;
 using AspnetRun.Application.Models;
+using AspnetRun.Shared.Extentions;
 
 namespace AspnetRun.Application.Services
 {
@@ -20,10 +17,10 @@ namespace AspnetRun.Application.Services
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public async Task<IEnumerable<CategoryDto>> GetCategoryList()
+        public async Task<List<CategoryDto>> GetCategoryList()
         {
             var category = await _categoryRepository.GetAllAsync();
-            var mapped = ObjectMapper.Mapper.Map<IEnumerable<CategoryDto>>(category);
+            var mapped = category.ToList().ToCatergoryItemDtoList();
             return mapped;
         }        
         

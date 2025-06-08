@@ -1,19 +1,25 @@
-﻿using AspnetRun.Web.ViewModels;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using AspnetRun.Application.Models;
+using AspnetRun.Web.ViewModels;
+using NetMvc.Cms.Common.ViewModel.Common;
 
 namespace AspnetRun.Web.Interfaces
 {
     public interface IProductPageService
     {
-        Task<IEnumerable<ProductViewModel>> GetProducts(string productName);
+        Task<ListViewModel<ProductDto>> GetProducts(string productName);
+
         Task<ProductViewModel> GetProductById(int productId);
+
         Task<ProductViewModel> GetProductBySlug(string slug);
-        Task<IEnumerable<ProductViewModel>> GetProductByCategory(int categoryId);
-        Task<IEnumerable<CategoryViewModel>> GetCategories();
+
+        Task<ListViewModel<ProductDto>> GetProductByCategory(int categoryId);
+
+        Task<ListViewModel<CategoryDto>> GetCategories();
 
         Task AddToCart(string userName, int productId);
+
         Task AddToWishlist(string userName, int productId);
+
         Task AddToCompare(string userName, int productId);
     }
 }

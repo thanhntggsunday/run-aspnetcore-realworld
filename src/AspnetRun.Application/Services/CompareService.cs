@@ -1,13 +1,10 @@
 ﻿using AspnetRun.Application.Interfaces;
-using AspnetRun.Application.Mapper;
 using AspnetRun.Application.Models;
 using AspnetRun.Core.Entities;
 using AspnetRun.Core.Interfaces;
 using AspnetRun.Core.Repositories;
 using AspnetRun.Core.Specifications;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
+using AspnetRun.Shared.Extentions;
 
 namespace AspnetRun.Application.Services
 {
@@ -27,12 +24,12 @@ namespace AspnetRun.Application.Services
         public async Task<CompareDto> GetCompareByUserName(string userName)
         {
             var compare = await GetExistingOrCreateNewCompare(userName);
-            var compareModel = ObjectMapper.Mapper.Map<CompareDto>(compare);
-            
+            var compareModel = compare.ToCompareDto();
+
             foreach (var item in compare.ProductCompares)
             {
                 var product = await _productRepository.GetProductByIdWithCategoryAsync(item.ProductId);
-                var productModel = ObjectMapper.Mapper.Map<ProductDto>(product);
+                var productModel = product.ToProductDto();
                 compareModel.Items.Add(productModel);
             }
             return compareModel;

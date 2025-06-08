@@ -1,7 +1,8 @@
 ﻿using AspnetRun.Application.Models;
 using AspnetRun.Core.Entities;
+using AspnetRun.Shared.Extentions;
 
-namespace AspnetRun.Application.Extentions
+namespace AspnetRun.Shared.Extentions
 {
     public static class CategoryModelExtensions
     {
@@ -16,6 +17,20 @@ namespace AspnetRun.Application.Extentions
                 Description = category.Description,
                 ImageName = category.ImageName
             };
+        }
+
+        public static List<CategoryDto> ToCatergoryItemDtoList(this List<Category> items)
+        {
+            if (items == null) return null;
+
+            var resutl = new List<CategoryDto>();
+
+            for (var i = 0; i < items.Count; i++)
+            {
+                resutl.Add(items[i].ToCategoryDto());
+            }
+
+            return resutl;
         }
 
         public static Category ToCategoryEntity(this CategoryDto category)

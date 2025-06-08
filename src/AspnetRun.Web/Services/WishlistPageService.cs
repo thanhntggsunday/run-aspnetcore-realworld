@@ -12,21 +12,26 @@ namespace AspnetRun.Web.Services
     {
         private readonly IWishlistService _wishListAppService;
         private readonly ICartService _cartAppService;
-        private readonly IMapper _mapper;
+        // private readonly IMapper _mapper;
         private readonly ILogger<WishlistPageService> _logger;
 
         public WishlistPageService(IWishlistService wishListAppService, ICartService cartAppService, IMapper mapper, ILogger<WishlistPageService> logger)
         {
             _wishListAppService = wishListAppService ?? throw new ArgumentNullException(nameof(wishListAppService));
             _cartAppService = cartAppService ?? throw new ArgumentNullException(nameof(cartAppService));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            // _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public async Task<WishlistViewModel> GetWishlist(string userName)
         {
             var wishlist = await _wishListAppService.GetWishlistByUserName(userName);
-            var mapped = _mapper.Map<WishlistViewModel>(wishlist);
+            // var mapped = _mapper.Map<WishlistViewModel>(wishlist);
+            var mapped = new WishlistViewModel
+            {
+                Data = wishlist
+            };
+
             return mapped;
         }
 

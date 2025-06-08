@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using AspnetRun.Core.Entities;
-using AspnetRun.Core.Interfaces;
+﻿using AspnetRun.Core.Interfaces;
 using AspnetRun.Core.Repositories;
 using AspnetRun.Application.Models;
-using AspnetRun.Application.Mapper;
 using AspnetRun.Application.Interfaces;
-using AspnetRun.Application.Extentions;
+using AspnetRun.Shared.Extentions;
 
 namespace AspnetRun.Application.Services
 {

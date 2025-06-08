@@ -1,5 +1,4 @@
-﻿using AspnetRun.Application.Extentions;
-using AspnetRun.Application.Models;
+﻿using AspnetRun.Application.Models;
 using AspnetRun.Core.Entities;
 
 namespace AspnetRun.Shared.Extentions

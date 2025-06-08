@@ -1,5 +1,4 @@
-﻿using AspnetRun.Application.Extentions;
-using AspnetRun.Application.Models;
+﻿using AspnetRun.Application.Models;
 using AspnetRun.Core.Entities;
 
 namespace AspnetRun.Shared.Extentions
@@ -21,7 +20,7 @@ namespace AspnetRun.Shared.Extentions
             };
         }
 
-        public static List<OrderItemDto> ToCartItemDtoList(this List<OrderItem> items)
+        public static List<OrderItemDto> ToOrderItemDtoList(this List<OrderItem> items)
         {
             if (items == null) return null;
 
@@ -47,6 +46,20 @@ namespace AspnetRun.Shared.Extentions
                 Quantity = model.Quantity,
                 UnitPrice = model.UnitPrice
             };
+        }
+
+        public static List<OrderItem> ToOrderItemEntityList(this List<OrderItemDto> items)
+        {
+            if (items == null) return null;
+
+            var resutl = new List<OrderItem>();
+
+            for (var i = 0; i < items.Count; i++)
+            {
+                resutl.Add(items[i].ToOrderItemEntity());
+            }
+
+            return resutl;
         }
     }
 }

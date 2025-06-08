@@ -1,6 +1,5 @@
-﻿using AspnetRun.Web.ViewModels;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using AspnetRun.Application.Models;
+using NetMvc.Cms.Common.ViewModel.Common;
 
 namespace AspnetRun.Web.Interfaces
 {
@@ -8,6 +7,6 @@ namespace AspnetRun.Web.Interfaces
     // this is the razor page based service
     public interface IIndexPageService
     {
-        Task<IEnumerable<ProductViewModel>> GetProducts();        
+        Task<ListViewModel<ProductDto>> GetProducts();
     }
 }

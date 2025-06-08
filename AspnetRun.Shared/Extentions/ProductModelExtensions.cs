@@ -1,7 +1,7 @@
 ﻿using AspnetRun.Application.Models;
 using AspnetRun.Core.Entities;
 
-namespace AspnetRun.Application.Extentions
+namespace AspnetRun.Shared.Extentions
 {
     public static class ProductModelExtensions
     {
