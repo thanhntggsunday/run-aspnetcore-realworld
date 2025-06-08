@@ -26,11 +26,6 @@ builder.Services.AddDbContext<AspnetRunContext>(c =>
     c.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
                    x => x.MigrationsAssembly("AspnetRun.Web")));
 
-// Add services to the container.
-//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-//builder.Services.AddDbContext<AspnetRunContext>(options =>
-//    options.UseSqlServer(connectionString));
-
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -51,10 +46,6 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
     options.CheckConsentNeeded = context => true;
     options.MinimumSameSitePolicy = SameSiteMode.None;
 });
-
-//builder.Services.AddDefaultIdentity<IdentityUser>()
-//    .AddDefaultUI()
-//    .AddEntityFrameworkStores<AspnetRunContext>();
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
