@@ -1,18 +1,17 @@
 ﻿using AspnetRun.Application.Interfaces;
 using AspnetRun.Application.Models;
-using AspnetRun.Core.Entities;
-using AspnetRun.Core.Interfaces;
 using AspnetRun.Core.Repositories;
 using AspnetRun.Shared.Extentions;
+using Microsoft.Extensions.Logging;
 
 namespace AspnetRun.Application.Services
 {
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _orderRepository;
-        private readonly IAppLogger<OrderService> _logger;
+        private readonly ILogger<OrderService> _logger;
 
-        public OrderService(IOrderRepository orderRepository, IAppLogger<OrderService> logger)
+        public OrderService(IOrderRepository orderRepository, ILogger<OrderService> logger)
         {
             _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));

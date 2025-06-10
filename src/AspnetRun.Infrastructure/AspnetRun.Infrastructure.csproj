@@ -18,4 +18,8 @@
     <ProjectReference Include="..\AspnetRun.Shared\AspnetRun.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Logging\" />
+  </ItemGroup>
+
 </Project>

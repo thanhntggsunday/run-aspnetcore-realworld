@@ -1,8 +1,8 @@
-﻿using AspnetRun.Core.Interfaces;
-using AspnetRun.Core.Repositories;
+﻿using AspnetRun.Core.Repositories;
 using AspnetRun.Application.Models;
 using AspnetRun.Application.Interfaces;
 using AspnetRun.Shared.Extentions;
+using Microsoft.Extensions.Logging;
 
 namespace AspnetRun.Application.Services
 {
@@ -10,9 +10,9 @@ namespace AspnetRun.Application.Services
     public class ProductService : IProductService
     {
         private readonly IProductRepository _productRepository;
-        private readonly IAppLogger<ProductService> _logger;
+        private readonly ILogger<ProductService> _logger;
 
-        public ProductService(IProductRepository productRepository, IAppLogger<ProductService> logger)
+        public ProductService(IProductRepository productRepository, ILogger<ProductService> logger)
         {
             _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));

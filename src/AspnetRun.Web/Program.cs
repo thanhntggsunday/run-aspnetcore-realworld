@@ -1,11 +1,9 @@
 ﻿using AspnetRun.Application.Interfaces;
 using AspnetRun.Application.Services;
 using AspnetRun.Core.Configuration;
-using AspnetRun.Core.Interfaces;
 using AspnetRun.Core.Repositories;
 using AspnetRun.Core.Repositories.Base;
 using AspnetRun.Infrastructure.Data;
-using AspnetRun.Infrastructure.Logging;
 using AspnetRun.Infrastructure.Repository;
 using AspnetRun.Infrastructure.Repository.Base;
 using AspnetRun.Web.Data.Interfaces;
@@ -58,7 +56,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 });
 
 // **Registry Repository and Services**
-services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
+//services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
 services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 services.AddScoped<IProductRepository, ProductRepository>();
 services.AddScoped<ICategoryRepository, CategoryRepository>();

@@ -11,4 +11,8 @@
     <ProjectReference Include="..\AspnetRun.Shared\AspnetRun.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
 </Project>

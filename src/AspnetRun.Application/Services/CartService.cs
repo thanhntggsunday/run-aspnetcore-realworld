@@ -1,10 +1,10 @@
 ﻿using AspnetRun.Application.Interfaces;
 using AspnetRun.Application.Models;
 using AspnetRun.Core.Entities;
-using AspnetRun.Core.Interfaces;
 using AspnetRun.Core.Repositories;
 using AspnetRun.Core.Specifications;
 using AspnetRun.Shared.Extentions;
+using Microsoft.Extensions.Logging;
 
 namespace AspnetRun.Application.Services
 {
@@ -12,9 +12,9 @@ namespace AspnetRun.Application.Services
     {
         private readonly ICartRepository _cartRepository;
         private readonly IProductRepository _productRepository;
-        private readonly IAppLogger<CartService> _logger;
+        private readonly ILogger<CartService> _logger;
 
-        public CartService(ICartRepository cartRepository, IProductRepository productRepository, IAppLogger<CartService> logger)
+        public CartService(ICartRepository cartRepository, IProductRepository productRepository, ILogger<CartService> logger)
         {
             _cartRepository = cartRepository ?? throw new ArgumentNullException(nameof(cartRepository));
             _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));

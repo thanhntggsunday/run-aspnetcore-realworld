@@ -1,10 +1,10 @@
 ﻿using AspnetRun.Application.Interfaces;
 using AspnetRun.Application.Models;
 using AspnetRun.Core.Entities;
-using AspnetRun.Core.Interfaces;
 using AspnetRun.Core.Repositories;
 using AspnetRun.Core.Specifications;
 using AspnetRun.Shared.Extentions;
+using Microsoft.Extensions.Logging;
 
 namespace AspnetRun.Application.Services
 {
@@ -12,9 +12,9 @@ namespace AspnetRun.Application.Services
     {
         private readonly ICompareRepository _compareRepository;
         private readonly IProductRepository _productRepository;
-        private readonly IAppLogger<CompareService> _logger;
+        private readonly ILogger<CompareService> _logger;
 
-        public CompareService(ICompareRepository compareRepository, IProductRepository productRepository, IAppLogger<CompareService> logger)
+        public CompareService(ICompareRepository compareRepository, IProductRepository productRepository, ILogger<CompareService> logger)
         {
             _compareRepository = compareRepository ?? throw new ArgumentNullException(nameof(compareRepository));
             _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));

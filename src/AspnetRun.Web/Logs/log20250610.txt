@@ -1,0 +1,585 @@
+2025-06-10 21:34:58.935 +07:00 [INF] User profile is available. Using 'C:\Users\Admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-10 21:35:00.109 +07:00 [WRN] No store type was specified for the decimal property 'TotalPrice' on entity type 'CartItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-10 21:35:00.110 +07:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'CartItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-10 21:35:00.110 +07:00 [WRN] No store type was specified for the decimal property 'GrandTotal' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-10 21:35:00.110 +07:00 [WRN] No store type was specified for the decimal property 'TotalPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-10 21:35:00.110 +07:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-10 21:35:00.110 +07:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-10 21:35:00.795 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Category] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-10 21:35:00.824 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Specification] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-10 21:35:00.829 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Review] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-10 21:35:00.833 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tag] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-10 21:35:00.840 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Product] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-10 21:35:00.844 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ProductRelatedProduct] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-10 21:35:00.848 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [List] AS [l]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-10 21:35:00.852 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Compare] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-10 21:35:00.855 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Wishlist] AS [w]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-10 21:35:00.859 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cart] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-10 21:35:00.863 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Order] AS [o]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-10 21:35:00.867 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Blog] AS [b]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-10 21:35:01.021 +07:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2025-06-10 21:35:01.084 +07:00 [INF] Now listening on: https://localhost:54221
+2025-06-10 21:35:01.084 +07:00 [INF] Now listening on: http://localhost:54222
+2025-06-10 21:35:01.140 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-10 21:35:01.140 +07:00 [INF] Hosting environment: Development
+2025-06-10 21:35:01.140 +07:00 [INF] Content root path: C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web
+2025-06-10 21:35:02.046 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/ - null null
+2025-06-10 21:35:02.200 +07:00 [INF] Executing endpoint '/Index'
+2025-06-10 21:35:02.235 +07:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2025-06-10 21:35:02.280 +07:00 [INF] Executing handler method AspnetRun.Web.Pages.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-06-10 21:35:02.428 +07:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedBy], [p].[CreatedDate], [p].[Description], [p].[ImageFile], [p].[ModifiedBy], [p].[ModifiedDate], [p].[Name], [p].[Slug], [p].[Star], [p].[Summary], [p].[UnitPrice], [p].[UnitsInStock], [c].[Id], [c].[CreatedBy], [c].[CreatedDate], [c].[Description], [c].[ImageName], [c].[ModifiedBy], [c].[ModifiedDate], [c].[Name]
+FROM [Product] AS [p]
+INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+2025-06-10 21:35:02.534 +07:00 [INF] Index page loaded with 25 products.
+2025-06-10 21:35:02.534 +07:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-06-10 21:35:02.536 +07:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-06-10 21:35:02.536 +07:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-06-10 21:35:02.719 +07:00 [INF] Executed page /Index in 476.3388ms
+2025-06-10 21:35:02.720 +07:00 [INF] Executed endpoint '/Index'
+2025-06-10 21:35:02.724 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/css/icon-font.min.css - null null
+2025-06-10 21:35:02.724 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/css/plugins.css - null null
+2025-06-10 21:35:02.724 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/css/style.css - null null
+2025-06-10 21:35:02.724 +07:00 [INF] HTTP GET / responded 200 in 524.1716 ms
+2025-06-10 21:35:02.726 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/css/bootstrap.min.css - null null
+2025-06-10 21:35:02.735 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/js/vendor/modernizr-2.8.3.min.js - null null
+2025-06-10 21:35:02.740 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/icons/car.png - null null
+2025-06-10 21:35:02.746 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/icons/marker.png - null null
+2025-06-10 21:35:02.811 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/ - 200 null text/html; charset=utf-8 757.6677ms
+2025-06-10 21:35:02.829 +07:00 [INF] Sending file. Request path: '/assets/images/icons/car.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\icons\car.png'
+2025-06-10 21:35:02.829 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/icons/car.png - 200 931 image/png 91.5724ms
+2025-06-10 21:35:02.829 +07:00 [INF] Sending file. Request path: '/assets/images/icons/marker.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\icons\marker.png'
+2025-06-10 21:35:02.830 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/icons/marker.png - 200 470 image/png 84.3913ms
+2025-06-10 21:35:02.829 +07:00 [INF] Sending file. Request path: '/assets/css/bootstrap.min.css'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\css\bootstrap.min.css'
+2025-06-10 21:35:02.829 +07:00 [INF] Sending file. Request path: '/assets/css/icon-font.min.css'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\css\icon-font.min.css'
+2025-06-10 21:35:02.830 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/css/icon-font.min.css - 200 138337 text/css 106.5059ms
+2025-06-10 21:35:02.830 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/css/bootstrap.min.css - 200 127349 text/css 106.1416ms
+2025-06-10 21:35:02.836 +07:00 [INF] Sending file. Request path: '/assets/css/style.css'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\css\style.css'
+2025-06-10 21:35:02.836 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/css/style.css - 200 350045 text/css 111.7854ms
+2025-06-10 21:35:02.842 +07:00 [INF] Sending file. Request path: '/assets/css/plugins.css'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\css\plugins.css'
+2025-06-10 21:35:02.842 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/css/plugins.css - 200 27145 text/css 118.1139ms
+2025-06-10 21:35:02.856 +07:00 [INF] Sending file. Request path: '/assets/js/vendor/modernizr-2.8.3.min.js'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\js\vendor\modernizr-2.8.3.min.js'
+2025-06-10 21:35:02.856 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/js/vendor/modernizr-2.8.3.min.js - 200 15518 text/javascript 120.8139ms
+2025-06-10 21:35:02.857 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/logo.png - null null
+2025-06-10 21:35:02.857 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/logo-light.png - null null
+2025-06-10 21:35:02.859 +07:00 [INF] Sending file. Request path: '/assets/images/logo.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\logo.png'
+2025-06-10 21:35:02.859 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/logo.png - 200 473 image/png 2.5683ms
+2025-06-10 21:35:02.859 +07:00 [INF] Sending file. Request path: '/assets/images/logo-light.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\logo-light.png'
+2025-06-10 21:35:02.860 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/logo-light.png - 200 465 image/png 3.1659ms
+2025-06-10 21:35:02.873 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/hero/hero-1.png - null null
+2025-06-10 21:35:02.876 +07:00 [INF] Sending file. Request path: '/assets/images/hero/hero-1.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\hero\hero-1.png'
+2025-06-10 21:35:02.876 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/hero/hero-1.png - 200 29881 image/png 3.7765ms
+2025-06-10 21:35:02.878 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/js/vendor/jquery-1.12.4.min.js - null null
+2025-06-10 21:35:02.879 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/js/popper.min.js - null null
+2025-06-10 21:35:02.958 +07:00 [INF] Sending file. Request path: '/assets/js/popper.min.js'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\js\popper.min.js'
+2025-06-10 21:35:02.958 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/js/popper.min.js - 200 18998 text/javascript 79.27ms
+2025-06-10 21:35:03.022 +07:00 [INF] Sending file. Request path: '/assets/js/vendor/jquery-1.12.4.min.js'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\js\vendor\jquery-1.12.4.min.js'
+2025-06-10 21:35:03.022 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/js/vendor/jquery-1.12.4.min.js - 200 97168 text/javascript 144.325ms
+2025-06-10 21:35:03.027 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/js/bootstrap.min.js - null null
+2025-06-10 21:35:03.037 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/js/main.js - null null
+2025-06-10 21:35:03.037 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/js/plugins.js - null null
+2025-06-10 21:35:03.037 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/hero/hero-3.png - null null
+2025-06-10 21:35:03.037 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/hero/hero-2.png - null null
+2025-06-10 21:35:03.038 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/banner/banner-1.jpg - null null
+2025-06-10 21:35:03.042 +07:00 [INF] Sending file. Request path: '/assets/images/hero/hero-3.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\hero\hero-3.png'
+2025-06-10 21:35:03.043 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/hero/hero-3.png - 200 19624 image/png 5.3411ms
+2025-06-10 21:35:03.043 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/banner/banner-2.jpg - null null
+2025-06-10 21:35:03.044 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-1.png - null null
+2025-06-10 21:35:03.044 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-2.png - null null
+2025-06-10 21:35:03.046 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-10 21:35:03.049 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-3.png - null null
+2025-06-10 21:35:03.049 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-4.png - null null
+2025-06-10 21:35:03.049 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-5.png - null null
+2025-06-10 21:35:03.050 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-6.png - null null
+2025-06-10 21:35:03.053 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-7.png - null null
+2025-06-10 21:35:03.054 +07:00 [INF] Sending file. Request path: '/assets/images/hero/hero-2.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\hero\hero-2.png'
+2025-06-10 21:35:03.054 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/hero/hero-2.png - 200 20734 image/png 16.4997ms
+2025-06-10 21:35:03.053 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-8.png - null null
+2025-06-10 21:35:03.054 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-9.png - null null
+2025-06-10 21:35:03.058 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-10.png - null null
+2025-06-10 21:35:03.058 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-11.png - null null
+2025-06-10 21:35:03.058 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-12.png - null null
+2025-06-10 21:35:03.058 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/banner/banner-3.jpg - null null
+2025-06-10 21:35:03.063 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/icons/feature-walet.png - null null
+2025-06-10 21:35:03.063 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/icons/feature-van.png - null null
+2025-06-10 21:35:03.063 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/icons/feature-shield.png - null null
+2025-06-10 21:35:03.064 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-14.png - null null
+2025-06-10 21:35:03.065 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-13.png - null null
+2025-06-10 21:35:03.069 +07:00 [INF] Sending file. Request path: '/assets/images/icons/feature-van.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\icons\feature-van.png'
+2025-06-10 21:35:03.069 +07:00 [INF] Sending file. Request path: '/assets/images/icons/feature-shield.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\icons\feature-shield.png'
+2025-06-10 21:35:03.069 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/icons/feature-van.png - 200 2105 image/png 6.1938ms
+2025-06-10 21:35:03.069 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/icons/feature-shield.png - 200 2193 image/png 6.0999ms
+2025-06-10 21:35:03.070 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-15.png - null null
+2025-06-10 21:35:03.069 +07:00 [INF] Sending file. Request path: '/assets/images/icons/feature-walet.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\icons\feature-walet.png'
+2025-06-10 21:35:03.070 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/icons/feature-walet.png - 200 2020 image/png 6.8008ms
+2025-06-10 21:35:03.070 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-2.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-2.png'
+2025-06-10 21:35:03.071 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-2.png - 200 8651 image/png 26.066ms
+2025-06-10 21:35:03.071 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-1.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-1.png'
+2025-06-10 21:35:03.071 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-1.png - 200 12158 image/png 26.5408ms
+2025-06-10 21:35:03.072 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-4.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-4.png'
+2025-06-10 21:35:03.072 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-5.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-5.png'
+2025-06-10 21:35:03.072 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-4.png - 200 11131 image/png 23.7481ms
+2025-06-10 21:35:03.072 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-5.png - 200 14917 image/png 23.2605ms
+2025-06-10 21:35:03.072 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-3.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-3.png'
+2025-06-10 21:35:03.072 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-6.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-6.png'
+2025-06-10 21:35:03.072 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-3.png - 200 10010 image/png 23.814ms
+2025-06-10 21:35:03.072 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-6.png - 200 14409 image/png 22.4913ms
+2025-06-10 21:35:03.073 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-7.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-7.png'
+2025-06-10 21:35:03.073 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-8.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-8.png'
+2025-06-10 21:35:03.073 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-9.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-9.png'
+2025-06-10 21:35:03.073 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-7.png - 200 14680 image/png 19.7006ms
+2025-06-10 21:35:03.073 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-8.png - 200 12900 image/png 19.5593ms
+2025-06-10 21:35:03.073 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-9.png - 200 15961 image/png 18.8488ms
+2025-06-10 21:35:03.073 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-12.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-12.png'
+2025-06-10 21:35:03.073 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-12.png - 200 9447 image/png 14.8556ms
+2025-06-10 21:35:03.073 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-10.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-10.png'
+2025-06-10 21:35:03.073 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-11.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-11.png'
+2025-06-10 21:35:03.074 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-10.png - 200 15240 image/png 15.5389ms
+2025-06-10 21:35:03.074 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-11.png - 200 14555 image/png 15.5443ms
+2025-06-10 21:35:03.075 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 37.2852ms
+2025-06-10 21:35:03.075 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-16.png - null null
+2025-06-10 21:35:03.077 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-14.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-14.png'
+2025-06-10 21:35:03.077 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-14.png - 200 18238 image/png 13.1843ms
+2025-06-10 21:35:03.078 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-17.png - null null
+2025-06-10 21:35:03.078 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-18.png - null null
+2025-06-10 21:35:03.084 +07:00 [INF] Sending file. Request path: '/assets/images/banner/banner-2.jpg'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\banner\banner-2.jpg'
+2025-06-10 21:35:03.084 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-24.png - null null
+2025-06-10 21:35:03.084 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/banner/banner-2.jpg - 200 27552 image/jpeg 40.9685ms
+2025-06-10 21:35:03.084 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-20.png - null null
+2025-06-10 21:35:03.085 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-13.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-13.png'
+2025-06-10 21:35:03.085 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-21.png - null null
+2025-06-10 21:35:03.087 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-22.png - null null
+2025-06-10 21:35:03.088 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-13.png - 200 20371 image/png 23.9301ms
+2025-06-10 21:35:03.088 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-19.png - null null
+2025-06-10 21:35:03.088 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-23.png - null null
+2025-06-10 21:35:03.090 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/banner/banner-4.jpg - null null
+2025-06-10 21:35:03.091 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/banner/banner-5.jpg - null null
+2025-06-10 21:35:03.093 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/banner/banner-6.jpg - null null
+2025-06-10 21:35:03.094 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/brands/brand-2.png - null null
+2025-06-10 21:35:03.097 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/brands/brand-1.png - null null
+2025-06-10 21:35:03.098 +07:00 [INF] Sending file. Request path: '/assets/images/brands/brand-2.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\brands\brand-2.png'
+2025-06-10 21:35:03.099 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/brands/brand-4.png - null null
+2025-06-10 21:35:03.099 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/brands/brand-3.png - null null
+2025-06-10 21:35:03.099 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/brands/brand-2.png - 200 2595 image/png 5.6899ms
+2025-06-10 21:35:03.099 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/brands/brand-5.png - null null
+2025-06-10 21:35:03.099 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/payment-support.png - null null
+2025-06-10 21:35:03.104 +07:00 [INF] Sending file. Request path: '/assets/images/brands/brand-3.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\brands\brand-3.png'
+2025-06-10 21:35:03.105 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/brands/brand-3.png - 200 3153 image/png 6.1641ms
+2025-06-10 21:35:03.105 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/_vs/browserLink - null null
+2025-06-10 21:35:03.107 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-15.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-15.png'
+2025-06-10 21:35:03.107 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-16.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-16.png'
+2025-06-10 21:35:03.108 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-17.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-17.png'
+2025-06-10 21:35:03.108 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-17.png - 200 13598 image/png 30.0636ms
+2025-06-10 21:35:03.108 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-16.png - 200 10483 image/png 32.7743ms
+2025-06-10 21:35:03.108 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-15.png - 200 16530 image/png 38.1654ms
+2025-06-10 21:35:03.108 +07:00 [INF] Sending file. Request path: '/assets/images/banner/banner-1.jpg'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\banner\banner-1.jpg'
+2025-06-10 21:35:03.108 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/banner/banner-1.jpg - 200 41584 image/jpeg 70.711ms
+2025-06-10 21:35:03.109 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-24.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-24.png'
+2025-06-10 21:35:03.109 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-20.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-20.png'
+2025-06-10 21:35:03.109 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-24.png - 200 9448 image/png 25.4067ms
+2025-06-10 21:35:03.109 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-20.png - 200 12742 image/png 25.0232ms
+2025-06-10 21:35:03.110 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-21.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-21.png'
+2025-06-10 21:35:03.110 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-22.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-22.png'
+2025-06-10 21:35:03.110 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-21.png - 200 12606 image/png 24.9667ms
+2025-06-10 21:35:03.110 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-22.png - 200 12859 image/png 22.5483ms
+2025-06-10 21:35:03.112 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-19.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-19.png'
+2025-06-10 21:35:03.112 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-23.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-23.png'
+2025-06-10 21:35:03.112 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-23.png - 200 14193 image/png 24.3094ms
+2025-06-10 21:35:03.112 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-19.png - 200 9144 image/png 24.4815ms
+2025-06-10 21:35:03.113 +07:00 [INF] Sending file. Request path: '/assets/images/banner/banner-4.jpg'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\banner\banner-4.jpg'
+2025-06-10 21:35:03.113 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/banner/banner-4.jpg - 200 19707 image/jpeg 22.8758ms
+2025-06-10 21:35:03.114 +07:00 [INF] Sending file. Request path: '/assets/images/brands/brand-4.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\brands\brand-4.png'
+2025-06-10 21:35:03.114 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/brands/brand-4.png - 200 4235 image/png 15.5702ms
+2025-06-10 21:35:03.115 +07:00 [INF] Sending file. Request path: '/assets/js/main.js'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\js\main.js'
+2025-06-10 21:35:03.116 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/js/main.js - 200 19137 text/javascript 78.3731ms
+2025-06-10 21:35:03.116 +07:00 [INF] Sending file. Request path: '/assets/images/payment-support.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\payment-support.png'
+2025-06-10 21:35:03.116 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/payment-support.png - 200 4597 image/png 17.0776ms
+2025-06-10 21:35:03.117 +07:00 [INF] Sending file. Request path: '/assets/images/brands/brand-5.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\brands\brand-5.png'
+2025-06-10 21:35:03.117 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/brands/brand-5.png - 200 5019 image/png 18.0848ms
+2025-06-10 21:35:03.118 +07:00 [INF] Sending file. Request path: '/assets/images/banner/banner-5.jpg'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\banner\banner-5.jpg'
+2025-06-10 21:35:03.121 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/banner/banner-5.jpg - 200 11579 image/jpeg 30.137ms
+2025-06-10 21:35:03.121 +07:00 [INF] Sending file. Request path: '/assets/images/brands/brand-1.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\brands\brand-1.png'
+2025-06-10 21:35:03.121 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/brands/brand-1.png - 200 4689 image/png 25.5845ms
+2025-06-10 21:35:03.121 +07:00 [INF] Sending file. Request path: '/assets/images/banner/banner-3.jpg'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\banner\banner-3.jpg'
+2025-06-10 21:35:03.121 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-18.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-18.png'
+2025-06-10 21:35:03.122 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-18.png - 200 23290 image/png 43.233ms
+2025-06-10 21:35:03.122 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/banner/banner-3.jpg - 200 41817 image/jpeg 63.1375ms
+2025-06-10 21:35:03.126 +07:00 [INF] Sending file. Request path: '/assets/images/banner/banner-6.jpg'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\banner\banner-6.jpg'
+2025-06-10 21:35:03.126 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/banner/banner-6.jpg - 200 28263 image/jpeg 32.896ms
+2025-06-10 21:35:03.143 +07:00 [INF] Sending file. Request path: '/assets/js/bootstrap.min.js'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\js\bootstrap.min.js'
+2025-06-10 21:35:03.144 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/js/bootstrap.min.js - 200 50570 text/javascript 116.7025ms
+2025-06-10 21:35:03.193 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/fonts/fontawesome-webfont.woff2?v=4.7.0 - null null
+2025-06-10 21:35:03.193 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/fonts/icofont.ttf?v=1.0.0-beta - null null
+2025-06-10 21:35:03.193 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/fonts/themify.woff?-fvbane - null null
+2025-06-10 21:35:03.197 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/_vs/browserLink - 200 null text/javascript; charset=UTF-8 91.9495ms
+2025-06-10 21:35:03.210 +07:00 [INF] Sending file. Request path: '/assets/js/plugins.js'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\js\plugins.js'
+2025-06-10 21:35:03.211 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/js/plugins.js - 200 174305 text/javascript 173.6311ms
+2025-06-10 21:35:03.221 +07:00 [INF] Sending file. Request path: '/assets/fonts/themify.woff'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\fonts\themify.woff'
+2025-06-10 21:35:03.221 +07:00 [INF] Sending file. Request path: '/assets/fonts/fontawesome-webfont.woff2'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\fonts\fontawesome-webfont.woff2'
+2025-06-10 21:35:03.221 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/fonts/themify.woff?-fvbane - 200 56108 application/font-woff 28.1147ms
+2025-06-10 21:35:03.221 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/fonts/fontawesome-webfont.woff2?v=4.7.0 - 200 77160 font/woff2 28.1853ms
+2025-06-10 21:35:03.248 +07:00 [INF] Sending file. Request path: '/assets/fonts/icofont.ttf'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\fonts\icofont.ttf'
+2025-06-10 21:35:03.249 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/fonts/icofont.ttf?v=1.0.0-beta - 200 1018620 application/x-font-ttf 55.3097ms
+2025-06-10 21:35:03.486 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/bg/offer-products.jpg - null null
+2025-06-10 21:35:03.491 +07:00 [INF] Sending file. Request path: '/assets/images/bg/offer-products.jpg'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\bg\offer-products.jpg'
+2025-06-10 21:35:03.491 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/bg/offer-products.jpg - 200 47048 image/jpeg 4.7358ms
+2025-06-10 21:35:03.878 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/api/tweet.php?username=&list=&hashtag=&count=2&exclude_replies=false - null null
+2025-06-10 21:35:03.885 +07:00 [INF] HTTP GET /assets/api/tweet.php responded 404 in 0.1150 ms
+2025-06-10 21:35:03.886 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/api/tweet.php?username=&list=&hashtag=&count=2&exclude_replies=false - 404 0 null 7.395ms
+2025-06-10 21:35:03.886 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:54221/assets/api/tweet.php, Response status code: 404
+2025-06-10 21:35:06.648 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/Products - null null
+2025-06-10 21:35:06.657 +07:00 [INF] Executing endpoint '/Products'
+2025-06-10 21:35:06.662 +07:00 [INF] Route matched with {page = "/Products", area = ""}. Executing page /Products
+2025-06-10 21:35:06.680 +07:00 [INF] Executing handler method AspnetRun.Web.Pages.ProductsModel.OnGetAsync - ModelState is "Invalid"
+2025-06-10 21:35:06.733 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedBy], [p].[CreatedDate], [p].[Description], [p].[ImageFile], [p].[ModifiedBy], [p].[ModifiedDate], [p].[Name], [p].[Slug], [p].[Star], [p].[Summary], [p].[UnitPrice], [p].[UnitsInStock], [c].[Id], [c].[CreatedBy], [c].[CreatedDate], [c].[Description], [c].[ImageName], [c].[ModifiedBy], [c].[ModifiedDate], [c].[Name]
+FROM [Product] AS [p]
+INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+2025-06-10 21:35:06.737 +07:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-06-10 21:35:06.737 +07:00 [INF] Executing an implicit handler method - ModelState is "Invalid"
+2025-06-10 21:35:06.737 +07:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-06-10 21:35:06.866 +07:00 [INF] Executed page /Products in 203.6135ms
+2025-06-10 21:35:06.866 +07:00 [INF] Executed endpoint '/Products'
+2025-06-10 21:35:06.866 +07:00 [INF] HTTP GET /Products responded 200 in 208.7883 ms
+2025-06-10 21:35:06.866 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/Products - 200 null text/html; charset=utf-8 218.7342ms
+2025-06-10 21:35:06.880 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/css/bootstrap.min.css - null null
+2025-06-10 21:35:06.884 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/css/plugins.css - null null
+2025-06-10 21:35:06.884 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/css/style.css - null null
+2025-06-10 21:35:06.884 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/css/icon-font.min.css - null null
+2025-06-10 21:35:06.885 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/icons/car.png - null null
+2025-06-10 21:35:06.885 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/icons/marker.png - null null
+2025-06-10 21:35:06.885 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/js/vendor/modernizr-2.8.3.min.js - null null
+2025-06-10 21:35:06.886 +07:00 [INF] Sending file. Request path: '/assets/css/bootstrap.min.css'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\css\bootstrap.min.css'
+2025-06-10 21:35:06.887 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/css/bootstrap.min.css - 200 127349 text/css 7.2494ms
+2025-06-10 21:35:06.890 +07:00 [INF] Sending file. Request path: '/assets/images/icons/marker.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\icons\marker.png'
+2025-06-10 21:35:06.893 +07:00 [INF] Sending file. Request path: '/assets/images/icons/car.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\icons\car.png'
+2025-06-10 21:35:06.893 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/icons/marker.png - 200 470 image/png 5.5485ms
+2025-06-10 21:35:06.895 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/icons/car.png - 200 931 image/png 10.1771ms
+2025-06-10 21:35:06.908 +07:00 [INF] Sending file. Request path: '/assets/js/vendor/modernizr-2.8.3.min.js'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\js\vendor\modernizr-2.8.3.min.js'
+2025-06-10 21:35:06.908 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/js/vendor/modernizr-2.8.3.min.js - 200 15518 text/javascript 23.0338ms
+2025-06-10 21:35:06.908 +07:00 [INF] Sending file. Request path: '/assets/css/plugins.css'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\css\plugins.css'
+2025-06-10 21:35:06.908 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/css/plugins.css - 200 27145 text/css 24.3679ms
+2025-06-10 21:35:06.912 +07:00 [INF] Sending file. Request path: '/assets/css/icon-font.min.css'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\css\icon-font.min.css'
+2025-06-10 21:35:06.913 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/css/icon-font.min.css - 200 138337 text/css 28.7647ms
+2025-06-10 21:35:06.915 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/logo.png - null null
+2025-06-10 21:35:06.916 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/logo-light.png - null null
+2025-06-10 21:35:06.917 +07:00 [INF] Sending file. Request path: '/assets/images/logo.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\logo.png'
+2025-06-10 21:35:06.918 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/logo.png - 200 473 image/png 3.1721ms
+2025-06-10 21:35:06.919 +07:00 [INF] Sending file. Request path: '/assets/images/logo-light.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\logo-light.png'
+2025-06-10 21:35:06.919 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/logo-light.png - 200 465 image/png 3.4878ms
+2025-06-10 21:35:06.920 +07:00 [INF] Sending file. Request path: '/assets/css/style.css'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\css\style.css'
+2025-06-10 21:35:06.920 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/css/style.css - 200 350045 text/css 35.924ms
+2025-06-10 21:35:06.924 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/banner/banner-15.jpg - null null
+2025-06-10 21:35:06.924 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/js/vendor/jquery-1.12.4.min.js - null null
+2025-06-10 21:35:06.928 +07:00 [INF] Sending file. Request path: '/assets/images/banner/banner-15.jpg'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\banner\banner-15.jpg'
+2025-06-10 21:35:06.929 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/banner/banner-15.jpg - 200 36073 image/jpeg 5.6253ms
+2025-06-10 21:35:06.929 +07:00 [INF] Sending file. Request path: '/assets/js/vendor/jquery-1.12.4.min.js'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\js\vendor\jquery-1.12.4.min.js'
+2025-06-10 21:35:06.929 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/js/vendor/jquery-1.12.4.min.js - 200 97168 text/javascript 6.0841ms
+2025-06-10 21:35:06.931 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/js/popper.min.js - null null
+2025-06-10 21:35:06.934 +07:00 [INF] Sending file. Request path: '/assets/js/popper.min.js'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\js\popper.min.js'
+2025-06-10 21:35:06.934 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/js/popper.min.js - 200 18998 text/javascript 3.1851ms
+2025-06-10 21:35:06.991 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/js/bootstrap.min.js - null null
+2025-06-10 21:35:06.996 +07:00 [INF] Sending file. Request path: '/assets/js/bootstrap.min.js'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\js\bootstrap.min.js'
+2025-06-10 21:35:06.996 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/js/bootstrap.min.js - 200 50570 text/javascript 5.4989ms
+2025-06-10 21:35:07.008 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/js/plugins.js - null null
+2025-06-10 21:35:07.014 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/js/main.js - null null
+2025-06-10 21:35:07.017 +07:00 [INF] Sending file. Request path: '/assets/js/main.js'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\js\main.js'
+2025-06-10 21:35:07.017 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/js/main.js - 200 19137 text/javascript 3.7408ms
+2025-06-10 21:35:07.019 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-11.png - null null
+2025-06-10 21:35:07.019 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-10 21:35:07.019 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-21.png - null null
+2025-06-10 21:35:07.020 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/banner/banner-14.jpg - null null
+2025-06-10 21:35:07.025 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 6.1278ms
+2025-06-10 21:35:07.025 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-20.png - null null
+2025-06-10 21:35:07.025 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-15.png - null null
+2025-06-10 21:35:07.025 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-14.png - null null
+2025-06-10 21:35:07.025 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-18.png - null null
+2025-06-10 21:35:07.026 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-16.png - null null
+2025-06-10 21:35:07.026 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-11.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-11.png'
+2025-06-10 21:35:07.028 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-10.png - null null
+2025-06-10 21:35:07.030 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-12.png - null null
+2025-06-10 21:35:07.030 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-11.png - 200 14555 image/png 9.6929ms
+2025-06-10 21:35:07.030 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-9.png - null null
+2025-06-10 21:35:07.031 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-4.png - null null
+2025-06-10 21:35:07.041 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-22.png - null null
+2025-06-10 21:35:07.042 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-2.png - null null
+2025-06-10 21:35:07.042 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-13.png - null null
+2025-06-10 21:35:07.043 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-20.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-20.png'
+2025-06-10 21:35:07.043 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-21.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-21.png'
+2025-06-10 21:35:07.043 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-21.png - 200 12606 image/png 23.7659ms
+2025-06-10 21:35:07.043 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-20.png - 200 12742 image/png 18.0152ms
+2025-06-10 21:35:07.048 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-15.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-15.png'
+2025-06-10 21:35:07.048 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-12.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-12.png'
+2025-06-10 21:35:07.048 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-16.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-16.png'
+2025-06-10 21:35:07.048 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-10.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-10.png'
+2025-06-10 21:35:07.048 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-12.png - 200 9447 image/png 22.3296ms
+2025-06-10 21:35:07.048 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-15.png - 200 16530 image/png 23.4581ms
+2025-06-10 21:35:07.048 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-10.png - 200 15240 image/png 20.7337ms
+2025-06-10 21:35:07.049 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-16.png - 200 10483 image/png 22.9172ms
+2025-06-10 21:35:07.050 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-1.png - null null
+2025-06-10 21:35:07.050 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-3.png - null null
+2025-06-10 21:35:07.050 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-17.png - null null
+2025-06-10 21:35:07.051 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-24.png - null null
+2025-06-10 21:35:07.050 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-4.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-4.png'
+2025-06-10 21:35:07.051 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-4.png - 200 11131 image/png 20.7596ms
+2025-06-10 21:35:07.052 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-5.png - null null
+2025-06-10 21:35:07.052 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-19.png - null null
+2025-06-10 21:35:07.052 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-6.png - null null
+2025-06-10 21:35:07.052 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-7.png - null null
+2025-06-10 21:35:07.059 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-23.png - null null
+2025-06-10 21:35:07.059 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/product/product-8.png - null null
+2025-06-10 21:35:07.059 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/brands/brand-3.png - null null
+2025-06-10 21:35:07.059 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/brands/brand-2.png - null null
+2025-06-10 21:35:07.059 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/brands/brand-4.png - null null
+2025-06-10 21:35:07.059 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/brands/brand-1.png - null null
+2025-06-10 21:35:07.060 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/brands/brand-5.png - null null
+2025-06-10 21:35:07.064 +07:00 [INF] Sending file. Request path: '/assets/images/brands/brand-3.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\brands\brand-3.png'
+2025-06-10 21:35:07.065 +07:00 [INF] Sending file. Request path: '/assets/images/brands/brand-2.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\brands\brand-2.png'
+2025-06-10 21:35:07.065 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/brands/brand-3.png - 200 3153 image/png 5.8901ms
+2025-06-10 21:35:07.065 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/payment-support.png - null null
+2025-06-10 21:35:07.065 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/_vs/browserLink - null null
+2025-06-10 21:35:07.065 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/brands/brand-2.png - 200 2595 image/png 6.2908ms
+2025-06-10 21:35:07.066 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-14.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-14.png'
+2025-06-10 21:35:07.066 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-9.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-9.png'
+2025-06-10 21:35:07.066 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-14.png - 200 18238 image/png 41.3141ms
+2025-06-10 21:35:07.066 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-9.png - 200 15961 image/png 35.9366ms
+2025-06-10 21:35:07.070 +07:00 [INF] Sending file. Request path: '/assets/js/plugins.js'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\js\plugins.js'
+2025-06-10 21:35:07.070 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/js/plugins.js - 200 174305 text/javascript 62.5432ms
+2025-06-10 21:35:07.071 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-2.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-2.png'
+2025-06-10 21:35:07.071 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-2.png - 200 8651 image/png 29.4189ms
+2025-06-10 21:35:07.071 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-22.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-22.png'
+2025-06-10 21:35:07.072 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-13.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-13.png'
+2025-06-10 21:35:07.072 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-22.png - 200 12859 image/png 30.7901ms
+2025-06-10 21:35:07.072 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-13.png - 200 20371 image/png 30.8512ms
+2025-06-10 21:35:07.072 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-17.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-17.png'
+2025-06-10 21:35:07.073 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-1.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-1.png'
+2025-06-10 21:35:07.073 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-3.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-3.png'
+2025-06-10 21:35:07.073 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-17.png - 200 13598 image/png 22.9981ms
+2025-06-10 21:35:07.073 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-1.png - 200 12158 image/png 23.4941ms
+2025-06-10 21:35:07.073 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-24.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-24.png'
+2025-06-10 21:35:07.073 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-24.png - 200 9448 image/png 22.1889ms
+2025-06-10 21:35:07.073 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-3.png - 200 10010 image/png 23.5257ms
+2025-06-10 21:35:07.073 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-5.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-5.png'
+2025-06-10 21:35:07.074 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-5.png - 200 14917 image/png 22.0162ms
+2025-06-10 21:35:07.074 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-7.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-7.png'
+2025-06-10 21:35:07.074 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-19.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-19.png'
+2025-06-10 21:35:07.074 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-7.png - 200 14680 image/png 21.9787ms
+2025-06-10 21:35:07.074 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-23.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-23.png'
+2025-06-10 21:35:07.074 +07:00 [INF] Sending file. Request path: '/assets/images/brands/brand-5.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\brands\brand-5.png'
+2025-06-10 21:35:07.075 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-23.png - 200 14193 image/png 16.0453ms
+2025-06-10 21:35:07.075 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/brands/brand-5.png - 200 5019 image/png 14.8864ms
+2025-06-10 21:35:07.074 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-19.png - 200 9144 image/png 23.545ms
+2025-06-10 21:35:07.075 +07:00 [INF] Sending file. Request path: '/assets/images/brands/brand-4.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\brands\brand-4.png'
+2025-06-10 21:35:07.075 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-18.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-18.png'
+2025-06-10 21:35:07.075 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/brands/brand-4.png - 200 4235 image/png 15.5669ms
+2025-06-10 21:35:07.075 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-6.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-6.png'
+2025-06-10 21:35:07.075 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-18.png - 200 23290 image/png 49.5347ms
+2025-06-10 21:35:07.075 +07:00 [INF] Sending file. Request path: '/assets/images/banner/banner-14.jpg'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\banner\banner-14.jpg'
+2025-06-10 21:35:07.075 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-6.png - 200 14409 image/png 22.7735ms
+2025-06-10 21:35:07.076 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/banner/banner-14.jpg - 200 41678 image/jpeg 57.2295ms
+2025-06-10 21:35:07.075 +07:00 [INF] Sending file. Request path: '/assets/images/payment-support.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\payment-support.png'
+2025-06-10 21:35:07.076 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/payment-support.png - 200 4597 image/png 11.3531ms
+2025-06-10 21:35:07.080 +07:00 [INF] Sending file. Request path: '/assets/images/product/product-8.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\product\product-8.png'
+2025-06-10 21:35:07.080 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/product/product-8.png - 200 12900 image/png 21.332ms
+2025-06-10 21:35:07.082 +07:00 [INF] Sending file. Request path: '/assets/images/brands/brand-1.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\brands\brand-1.png'
+2025-06-10 21:35:07.082 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/brands/brand-1.png - 200 4689 image/png 23.2085ms
+2025-06-10 21:35:07.085 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.9018ms
+2025-06-10 21:35:07.124 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/fonts/fontawesome-webfont.woff2?v=4.7.0 - null null
+2025-06-10 21:35:07.124 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/fonts/icofont.ttf?v=1.0.0-beta - null null
+2025-06-10 21:35:07.124 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/fonts/themify.woff?-fvbane - null null
+2025-06-10 21:35:07.131 +07:00 [INF] Sending file. Request path: '/assets/fonts/themify.woff'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\fonts\themify.woff'
+2025-06-10 21:35:07.131 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/fonts/themify.woff?-fvbane - 200 56108 application/font-woff 7.3321ms
+2025-06-10 21:35:07.131 +07:00 [INF] Sending file. Request path: '/assets/fonts/fontawesome-webfont.woff2'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\fonts\fontawesome-webfont.woff2'
+2025-06-10 21:35:07.132 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/fonts/fontawesome-webfont.woff2?v=4.7.0 - 200 77160 font/woff2 7.9743ms
+2025-06-10 21:35:07.151 +07:00 [INF] Sending file. Request path: '/assets/fonts/icofont.ttf'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\fonts\icofont.ttf'
+2025-06-10 21:35:07.151 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/fonts/icofont.ttf?v=1.0.0-beta - 200 1018620 application/x-font-ttf 27.3819ms
+2025-06-10 21:35:07.337 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/api/tweet.php?username=&list=&hashtag=&count=2&exclude_replies=false - null null
+2025-06-10 21:35:07.338 +07:00 [INF] HTTP GET /assets/api/tweet.php responded 404 in 0.0111 ms
+2025-06-10 21:35:07.339 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/api/tweet.php?username=&list=&hashtag=&count=2&exclude_replies=false - 404 0 null 1.4287ms
+2025-06-10 21:35:07.339 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:54221/assets/api/tweet.php, Response status code: 404
+2025-06-10 21:35:09.487 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/ProductDetail?slug=mascut-smart - null null
+2025-06-10 21:35:09.489 +07:00 [INF] Executing endpoint '/ProductDetail'
+2025-06-10 21:35:09.495 +07:00 [INF] Route matched with {page = "/ProductDetail", area = ""}. Executing page /ProductDetail
+2025-06-10 21:35:09.502 +07:00 [INF] Executing handler method AspnetRun.Web.Pages.ProductDetailModel.OnGetAsync - ModelState is "Valid"
+2025-06-10 21:35:09.566 +07:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-10 21:35:09.611 +07:00 [INF] Executed DbCommand (27ms) [Parameters=[@__ToLower_0_contains='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedBy], [p].[CreatedDate], [p].[Description], [p].[ImageFile], [p].[ModifiedBy], [p].[ModifiedDate], [p].[Name], [p].[Slug], [p].[Star], [p].[Summary], [p].[UnitPrice], [p].[UnitsInStock], [c].[Id], [c].[CreatedBy], [c].[CreatedDate], [c].[Description], [c].[ImageName], [c].[ModifiedBy], [c].[ModifiedDate], [c].[Name], [s].[Id], [s].[CreatedBy], [s].[CreatedDate], [s].[Description], [s].[ModifiedBy], [s].[ModifiedDate], [s].[Name], [s].[ProductId], [r].[Id], [r].[Comment], [r].[CreatedBy], [r].[CreatedDate], [r].[EMail], [r].[ModifiedBy], [r].[ModifiedDate], [r].[Name], [r].[ProductId], [r].[Star], [t].[Id], [t].[CreatedBy], [t].[CreatedDate], [t].[ModifiedBy], [t].[ModifiedDate], [t].[Name], [t].[ProductId]
+FROM [Product] AS [p]
+INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+LEFT JOIN [Specification] AS [s] ON [p].[Id] = [s].[ProductId]
+LEFT JOIN [Review] AS [r] ON [p].[Id] = [r].[ProductId]
+LEFT JOIN [Tag] AS [t] ON [p].[Id] = [t].[ProductId]
+WHERE LOWER([p].[Slug]) LIKE @__ToLower_0_contains ESCAPE N'\'
+ORDER BY [p].[Id], [c].[Id], [s].[Id], [r].[Id]
+2025-06-10 21:35:09.615 +07:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-06-10 21:35:09.615 +07:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-06-10 21:35:09.615 +07:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-06-10 21:35:09.639 +07:00 [INF] Executed page /ProductDetail in 143.9707ms
+2025-06-10 21:35:09.639 +07:00 [INF] Executed endpoint '/ProductDetail'
+2025-06-10 21:35:09.639 +07:00 [INF] HTTP GET /ProductDetail responded 200 in 149.4983 ms
+2025-06-10 21:35:09.639 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/ProductDetail?slug=mascut-smart - 200 null text/html; charset=utf-8 151.7255ms
+2025-06-10 21:35:09.663 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/big-1.png - null null
+2025-06-10 21:35:09.667 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/big-1.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\big-1.png'
+2025-06-10 21:35:09.667 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-10 21:35:09.667 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/big-1.png - 200 22039 image/png 4.601ms
+2025-06-10 21:35:09.667 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/big-2.png - null null
+2025-06-10 21:35:09.668 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 0.9442ms
+2025-06-10 21:35:09.670 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/big-2.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\big-2.png'
+2025-06-10 21:35:09.670 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/big-2.png - 200 19851 image/png 2.9866ms
+2025-06-10 21:35:09.698 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/big-8.png - null null
+2025-06-10 21:35:09.698 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/big-9.png - null null
+2025-06-10 21:35:09.698 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/big-7.png - null null
+2025-06-10 21:35:09.698 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/big-3.png - null null
+2025-06-10 21:35:09.698 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/big-13.png - null null
+2025-06-10 21:35:09.698 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/big-14.png - null null
+2025-06-10 21:35:09.698 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/big-15.png - null null
+2025-06-10 21:35:09.699 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/thumb-1.png - null null
+2025-06-10 21:35:09.699 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/thumb-2.png - null null
+2025-06-10 21:35:09.699 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/thumb-3.png - null null
+2025-06-10 21:35:09.699 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/_vs/browserLink - null null
+2025-06-10 21:35:09.699 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/images/single-product/description.png - null null
+2025-06-10 21:35:09.737 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/big-9.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\big-9.png'
+2025-06-10 21:35:09.737 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/big-9.png - 200 5671 image/png 38.8234ms
+2025-06-10 21:35:09.737 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/thumb-2.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\thumb-2.png'
+2025-06-10 21:35:09.737 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/thumb-1.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\thumb-1.png'
+2025-06-10 21:35:09.739 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/description.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\description.png'
+2025-06-10 21:35:09.739 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/big-3.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\big-3.png'
+2025-06-10 21:35:09.742 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/thumb-2.png - 200 4710 image/png 43.0388ms
+2025-06-10 21:35:09.742 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/big-3.png - 200 6937 image/png 43.7692ms
+2025-06-10 21:35:09.750 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/thumb-3.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\thumb-3.png'
+2025-06-10 21:35:09.750 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/thumb-3.png - 200 4606 image/png 50.8322ms
+2025-06-10 21:35:09.752 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/big-15.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\big-15.png'
+2025-06-10 21:35:09.753 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/big-15.png - 200 6542 image/png 54.1256ms
+2025-06-10 21:35:09.754 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/big-14.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\big-14.png'
+2025-06-10 21:35:09.754 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/big-14.png - 200 33582 image/png 55.9613ms
+2025-06-10 21:35:09.754 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/thumb-1.png - 200 5037 image/png 53.9873ms
+2025-06-10 21:35:09.754 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/description.png - 200 2497 image/png 54.8651ms
+2025-06-10 21:35:09.765 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/big-8.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\big-8.png'
+2025-06-10 21:35:09.774 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/big-8.png - 200 32902 image/png 76.3271ms
+2025-06-10 21:35:09.780 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/big-7.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\big-7.png'
+2025-06-10 21:35:09.780 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/big-7.png - 200 53299 image/png 82.0443ms
+2025-06-10 21:35:09.780 +07:00 [INF] Sending file. Request path: '/assets/images/single-product/big-13.png'. Physical path: 'C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web\wwwroot\assets\images\single-product\big-13.png'
+2025-06-10 21:35:09.780 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/images/single-product/big-13.png - 200 52489 image/png 81.9607ms
+2025-06-10 21:35:09.785 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/_vs/browserLink - 200 null text/javascript; charset=UTF-8 85.5786ms
+2025-06-10 21:35:09.853 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/assets/api/tweet.php?username=&list=&hashtag=&count=2&exclude_replies=false - null null
+2025-06-10 21:35:09.853 +07:00 [INF] HTTP GET /assets/api/tweet.php responded 404 in 0.0121 ms
+2025-06-10 21:35:09.853 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/assets/api/tweet.php?username=&list=&hashtag=&count=2&exclude_replies=false - 404 0 null 0.5835ms
+2025-06-10 21:35:09.853 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:54221/assets/api/tweet.php, Response status code: 404
+2025-06-10 21:35:20.077 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/Identity/Account/Login - null null
+2025-06-10 21:35:20.081 +07:00 [INF] Executing endpoint '/Account/Login'
+2025-06-10 21:35:20.090 +07:00 [INF] Route matched with {page = "/Account/Login", area = "Identity"}. Executing page /Account/Login
+2025-06-10 21:35:20.092 +07:00 [INF] Executing handler method AspnetRun.Web.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2025-06-10 21:35:20.095 +07:00 [INF] AuthenticationScheme: Identity.External signed out.
+2025-06-10 21:35:20.095 +07:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-06-10 21:35:20.095 +07:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-06-10 21:35:20.095 +07:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-06-10 21:35:20.134 +07:00 [INF] Executed page /Account/Login in 43.9851ms
+2025-06-10 21:35:20.134 +07:00 [INF] Executed endpoint '/Account/Login'
+2025-06-10 21:35:20.134 +07:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 52.3653 ms
+2025-06-10 21:35:20.134 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/Identity/Account/Login - 200 null text/html; charset=utf-8 56.6269ms
+2025-06-10 21:35:20.162 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/Identity/Account/assets/images/brands/brand-1.png - null null
+2025-06-10 21:35:20.164 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/Identity/lib/jquery-validation/dist/jquery.validate.js - null null
+2025-06-10 21:35:20.165 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/Identity/Account/assets/images/brands/brand-2.png - null null
+2025-06-10 21:35:20.167 +07:00 [INF] HTTP GET /Identity/Account/assets/images/brands/brand-1.png responded 404 in 0.0148 ms
+2025-06-10 21:35:20.167 +07:00 [INF] HTTP GET /Identity/Account/assets/images/brands/brand-2.png responded 404 in 0.0148 ms
+2025-06-10 21:35:20.167 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/Identity/Account/assets/images/brands/brand-1.png - 404 0 null 5.7613ms
+2025-06-10 21:35:20.167 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/Identity/Account/assets/images/brands/brand-2.png - 404 0 null 2.7124ms
+2025-06-10 21:35:20.167 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:54221/Identity/Account/assets/images/brands/brand-2.png, Response status code: 404
+2025-06-10 21:35:20.167 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:54221/Identity/Account/assets/images/brands/brand-1.png, Response status code: 404
+2025-06-10 21:35:20.193 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-10 21:35:20.193 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2025-06-10 21:35:20.193 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/Identity/Account/assets/images/brands/brand-3.png - null null
+2025-06-10 21:35:20.194 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/Identity/Account/assets/images/brands/brand-4.png - null null
+2025-06-10 21:35:20.194 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 1.1963ms
+2025-06-10 21:35:20.194 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/Identity/Account/assets/images/brands/brand-5.png - null null
+2025-06-10 21:35:20.194 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/_vs/browserLink - null null
+2025-06-10 21:35:20.195 +07:00 [INF] HTTP GET /Identity/Account/assets/images/brands/brand-3.png responded 404 in 0.0083 ms
+2025-06-10 21:35:20.195 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/Identity/Account/assets/images/brands/brand-3.png - 404 0 null 1.7958ms
+2025-06-10 21:35:20.195 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:54221/Identity/Account/assets/images/brands/brand-3.png, Response status code: 404
+2025-06-10 21:35:20.195 +07:00 [INF] HTTP GET /Identity/Account/assets/images/brands/brand-4.png responded 404 in 0.0068 ms
+2025-06-10 21:35:20.195 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/Identity/Account/assets/images/brands/brand-4.png - 404 0 null 1.0143ms
+2025-06-10 21:35:20.195 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:54221/Identity/Account/assets/images/brands/brand-4.png, Response status code: 404
+2025-06-10 21:35:20.196 +07:00 [INF] HTTP GET /Identity/Account/assets/images/brands/brand-5.png responded 404 in 0.0634 ms
+2025-06-10 21:35:20.196 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/Identity/Account/assets/images/brands/brand-5.png - 404 0 null 1.6918ms
+2025-06-10 21:35:20.196 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:54221/Identity/Account/assets/images/brands/brand-5.png, Response status code: 404
+2025-06-10 21:35:20.209 +07:00 [INF] Sending file. Request path: '/Identity/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'C:\Users\Admin\.nuget\packages\microsoft.aspnetcore.identity.ui\8.0.16\staticwebassets\V5\lib\jquery-validation\dist\jquery.validate.js'
+2025-06-10 21:35:20.209 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/Identity/lib/jquery-validation/dist/jquery.validate.js - 200 51171 text/javascript 44.8066ms
+2025-06-10 21:35:20.210 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.605ms
+2025-06-10 21:35:20.231 +07:00 [INF] Sending file. Request path: '/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'C:\Users\Admin\.nuget\packages\microsoft.aspnetcore.identity.ui\8.0.16\staticwebassets\V5\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js'
+2025-06-10 21:35:20.231 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 200 19385 text/javascript 37.7779ms
+2025-06-10 21:35:20.257 +07:00 [INF] Request starting HTTP/2 GET https://localhost:54221/Identity/Account/assets/api/tweet.php?username=&list=&hashtag=&count=2&exclude_replies=false - null null
+2025-06-10 21:35:20.258 +07:00 [INF] HTTP GET /Identity/Account/assets/api/tweet.php responded 404 in 0.0095 ms
+2025-06-10 21:35:20.258 +07:00 [INF] Request finished HTTP/2 GET https://localhost:54221/Identity/Account/assets/api/tweet.php?username=&list=&hashtag=&count=2&exclude_replies=false - 404 0 null 1.1563ms
+2025-06-10 21:35:20.258 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:54221/Identity/Account/assets/api/tweet.php, Response status code: 404

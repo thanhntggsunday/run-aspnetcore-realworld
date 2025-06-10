@@ -1,10 +1,10 @@
 ﻿using AspnetRun.Application.Interfaces;
 using AspnetRun.Application.Models;
 using AspnetRun.Core.Entities;
-using AspnetRun.Core.Interfaces;
 using AspnetRun.Core.Repositories;
 using AspnetRun.Core.Specifications;
 using AspnetRun.Shared.Extentions;
+using Microsoft.Extensions.Logging;
 
 namespace AspnetRun.Application.Services
 {
@@ -12,9 +12,9 @@ namespace AspnetRun.Application.Services
     {
         private readonly IWishlistRepository _wishlistRepository;
         private readonly IProductRepository _productRepository;
-        private readonly IAppLogger<WishListService> _logger;
+        private readonly ILogger<WishListService> _logger;
 
-        public WishListService(IWishlistRepository wishlistRepository, IProductRepository productRepository, IAppLogger<WishListService> logger)
+        public WishListService(IWishlistRepository wishlistRepository, IProductRepository productRepository, ILogger<WishListService> logger)
         {
             _wishlistRepository = wishlistRepository ?? throw new ArgumentNullException(nameof(wishlistRepository));
             _productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
