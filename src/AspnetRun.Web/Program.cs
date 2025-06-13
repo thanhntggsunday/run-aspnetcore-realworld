@@ -18,7 +18,6 @@ var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 var configuration = builder.Configuration;
 
-// **Registry services**
 builder.Services.Configure<AspnetRunSettings>(configuration);
 builder.Services.AddDbContext<AspnetRunContext>(c =>
     c.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
@@ -32,10 +31,20 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddLogging();
 
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .WriteTo.Async(
+        a => a.File("Logs/log.txt", 
+                    rollingInterval: RollingInterval.Day, 
+                    retainedFileCountLimit: 7,
+                    buffered: true, 
+                    flushToDiskInterval: TimeSpan.FromSeconds(5))
+     )
+    .WriteTo.Console()
+    .CreateLogger();
 
-// Cấu hình Serilog
-builder.Services.AddSerilog(config =>
-    config.WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day));
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog();
 
 //
 // cookie
@@ -55,8 +64,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredUniqueChars = 1;
 });
 
-// **Registry Repository and Services**
-//services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
+
 services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 services.AddScoped<IProductRepository, ProductRepository>();
 services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -106,7 +114,7 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.UseSerilogRequestLogging(); // Ghi log request
+// app.UseSerilogRequestLogging();
 
 // seed data
 using (var scope = app.Services.CreateScope())
