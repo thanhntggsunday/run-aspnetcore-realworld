@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace AspnetRun.Infrastructure.Logging
 {
-    internal static class SerilogProvider
+    public static class SerilogProvider
     {
         private static Logger GetLoggerConfiguration(string filePath)
         {
-            // Configure Serilog here
-            // For example, you can set up file logging, console logging, etc.
             return new LoggerConfiguration()
+                .Enrich.FromLogContext() // Thêm metadata vào log
                 .WriteTo.Console()
-                .WriteTo.File(filePath, rollingInterval: RollingInterval.Day)
+                .WriteTo.Async(a => a.File(filePath, rollingInterval: RollingInterval.Day, retainedFileCountLimit: 7,
+                    buffered: true, flushToDiskInterval: TimeSpan.FromSeconds(5))) // Ghi log bất đồng bộ
                 .CreateLogger();
         }
 

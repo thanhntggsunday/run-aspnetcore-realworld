@@ -27,9 +27,32 @@
                 message += $" Exception: {exception}";
             }
 
-            //// Ghi log vào file
-            //File.AppendAllText(_filePath, message + Environment.NewLine);
-            SerilogProvider.Information(message, _filePath);
+            switch (logLevel)
+            {
+                case LogLevel.Trace:
+                    SerilogProvider.Information(message, _filePath);
+                    break;
+                case LogLevel.Debug:
+                    SerilogProvider.Information(message, _filePath);
+                    break;
+                case LogLevel.Information:
+                    SerilogProvider.Information(message, _filePath);
+                    break;
+                case LogLevel.Warning:
+                    SerilogProvider.Warning(message, _filePath);
+                    break;
+                case LogLevel.Error:
+                    SerilogProvider.Error(message, _filePath);
+                    break;
+                case LogLevel.Critical:
+                    SerilogProvider.Information(message, _filePath);
+                    break;
+                case LogLevel.None:
+                    SerilogProvider.Information(message, _filePath);
+                    break;
+                default:
+                    break;
+            }           
         }
     }
 }

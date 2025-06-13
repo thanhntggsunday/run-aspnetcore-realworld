@@ -33,22 +33,6 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddRazorPages();
 
 builder.Services.AddLogging();
-
-//Log.Logger = new LoggerConfiguration()
-//    .Enrich.FromLogContext()
-//    .WriteTo.Async(
-//        a => a.File("Logs/log.txt", 
-//                    rollingInterval: RollingInterval.Day, 
-//                    retainedFileCountLimit: 7,
-//                    buffered: true, 
-//                    flushToDiskInterval: TimeSpan.FromSeconds(5))
-//     )
-//    .WriteTo.Console()
-//    .CreateLogger();
-
-//builder.Logging.ClearProviders();
-//builder.Logging.AddSerilog();
-
 // Tạo đường dẫn file log
 string logFilePath = "Logs/log.txt";
 
@@ -123,8 +107,6 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
-// app.UseSerilogRequestLogging();
 
 // seed data
 using (var scope = app.Services.CreateScope())
