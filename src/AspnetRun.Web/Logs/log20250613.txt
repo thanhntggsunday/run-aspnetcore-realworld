@@ -1,0 +1,230 @@
+2025-06-13 21:03:51.121 +07:00 [INF] 6/13/2025 2:03:51 PM [Warning] No store type was specified for the decimal property 'TotalPrice' on entity type 'CartItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-13 21:03:51.164 +07:00 [INF] 6/13/2025 2:03:51 PM [Warning] No store type was specified for the decimal property 'UnitPrice' on entity type 'CartItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-13 21:03:51.174 +07:00 [INF] 6/13/2025 2:03:51 PM [Warning] No store type was specified for the decimal property 'GrandTotal' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-13 21:03:51.181 +07:00 [INF] 6/13/2025 2:03:51 PM [Warning] No store type was specified for the decimal property 'TotalPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-13 21:03:51.188 +07:00 [INF] 6/13/2025 2:03:51 PM [Warning] No store type was specified for the decimal property 'UnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-13 21:03:51.195 +07:00 [INF] 6/13/2025 2:03:51 PM [Warning] No store type was specified for the decimal property 'UnitPrice' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-13 21:03:51.941 +07:00 [INF] 6/13/2025 2:03:51 PM [Information] Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Category] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:03:51.983 +07:00 [INF] 6/13/2025 2:03:51 PM [Information] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Specification] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:03:51.998 +07:00 [INF] 6/13/2025 2:03:51 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Review] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:03:52.018 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tag] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:03:52.043 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Product] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:03:52.059 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ProductRelatedProduct] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:03:52.076 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [List] AS [l]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:03:52.093 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Compare] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:03:52.113 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Wishlist] AS [w]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:03:52.129 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cart] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:03:52.145 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Order] AS [o]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:03:52.161 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Blog] AS [b]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:03:52.386 +07:00 [INF] 6/13/2025 2:03:52 PM [Warning] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2025-06-13 21:03:52.467 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Now listening on: https://localhost:54221
+2025-06-13 21:03:52.474 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Now listening on: http://localhost:54222
+2025-06-13 21:03:52.578 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Application started. Press Ctrl+C to shut down.
+2025-06-13 21:03:52.587 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Hosting environment: Development
+2025-06-13 21:03:52.595 +07:00 [INF] 6/13/2025 2:03:52 PM [Information] Content root path: C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web
+2025-06-13 21:03:53.575 +07:00 [INF] 6/13/2025 2:03:53 PM [Information] Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedBy], [p].[CreatedDate], [p].[Description], [p].[ImageFile], [p].[ModifiedBy], [p].[ModifiedDate], [p].[Name], [p].[Slug], [p].[Star], [p].[Summary], [p].[UnitPrice], [p].[UnitsInStock], [c].[Id], [c].[CreatedBy], [c].[CreatedDate], [c].[Description], [c].[ImageName], [c].[ModifiedBy], [c].[ModifiedDate], [c].[Name]
+FROM [Product] AS [p]
+INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+2025-06-13 21:03:53.728 +07:00 [INF] 6/13/2025 2:03:53 PM [Information] Index page loaded with 25 products.
+2025-06-13 21:03:55.831 +07:00 [INF] 6/13/2025 2:03:55 PM [Information] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedBy], [p].[CreatedDate], [p].[Description], [p].[ImageFile], [p].[ModifiedBy], [p].[ModifiedDate], [p].[Name], [p].[Slug], [p].[Star], [p].[Summary], [p].[UnitPrice], [p].[UnitsInStock], [c].[Id], [c].[CreatedBy], [c].[CreatedDate], [c].[Description], [c].[ImageName], [c].[ModifiedBy], [c].[ModifiedDate], [c].[Name]
+FROM [Product] AS [p]
+INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+2025-06-13 21:03:57.805 +07:00 [INF] 6/13/2025 2:03:57 PM [Warning] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-13 21:03:58.000 +07:00 [INF] 6/13/2025 2:03:57 PM [Information] Executed DbCommand (76ms) [Parameters=[@__ToLower_0_contains='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedBy], [p].[CreatedDate], [p].[Description], [p].[ImageFile], [p].[ModifiedBy], [p].[ModifiedDate], [p].[Name], [p].[Slug], [p].[Star], [p].[Summary], [p].[UnitPrice], [p].[UnitsInStock], [c].[Id], [c].[CreatedBy], [c].[CreatedDate], [c].[Description], [c].[ImageName], [c].[ModifiedBy], [c].[ModifiedDate], [c].[Name], [s].[Id], [s].[CreatedBy], [s].[CreatedDate], [s].[Description], [s].[ModifiedBy], [s].[ModifiedDate], [s].[Name], [s].[ProductId], [r].[Id], [r].[Comment], [r].[CreatedBy], [r].[CreatedDate], [r].[EMail], [r].[ModifiedBy], [r].[ModifiedDate], [r].[Name], [r].[ProductId], [r].[Star], [t].[Id], [t].[CreatedBy], [t].[CreatedDate], [t].[ModifiedBy], [t].[ModifiedDate], [t].[Name], [t].[ProductId]
+FROM [Product] AS [p]
+INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+LEFT JOIN [Specification] AS [s] ON [p].[Id] = [s].[ProductId]
+LEFT JOIN [Review] AS [r] ON [p].[Id] = [r].[ProductId]
+LEFT JOIN [Tag] AS [t] ON [p].[Id] = [t].[ProductId]
+WHERE LOWER([p].[Slug]) LIKE @__ToLower_0_contains ESCAPE N'\'
+ORDER BY [p].[Id], [c].[Id], [s].[Id], [r].[Id]
+2025-06-13 21:05:29.964 +07:00 [INF] 6/13/2025 2:04:57 PM [Warning] No store type was specified for the decimal property 'TotalPrice' on entity type 'CartItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-13 21:05:35.729 +07:00 [INF] 6/13/2025 2:05:31 PM [Warning] No store type was specified for the decimal property 'UnitPrice' on entity type 'CartItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-13 21:05:38.809 +07:00 [INF] 6/13/2025 2:05:35 PM [Warning] No store type was specified for the decimal property 'GrandTotal' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-13 21:05:41.916 +07:00 [INF] 6/13/2025 2:05:38 PM [Warning] No store type was specified for the decimal property 'TotalPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-13 21:05:44.388 +07:00 [INF] 6/13/2025 2:05:41 PM [Warning] No store type was specified for the decimal property 'UnitPrice' on entity type 'OrderItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-13 21:05:46.972 +07:00 [INF] 6/13/2025 2:05:44 PM [Warning] No store type was specified for the decimal property 'UnitPrice' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-13 21:05:51.890 +07:00 [INF] 6/13/2025 2:05:48 PM [Information] Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Category] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:05:54.017 +07:00 [INF] 6/13/2025 2:05:51 PM [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Specification] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:05:54.045 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Review] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:05:54.062 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tag] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:05:54.097 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Product] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:05:54.120 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ProductRelatedProduct] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:05:54.141 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [List] AS [l]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:05:54.158 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Compare] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:05:54.175 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Wishlist] AS [w]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:05:54.193 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cart] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:05:54.229 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Order] AS [o]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:05:54.259 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Blog] AS [b]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-13 21:05:54.470 +07:00 [INF] 6/13/2025 2:05:54 PM [Warning] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2025-06-13 21:05:54.570 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Now listening on: https://localhost:54221
+2025-06-13 21:05:54.579 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Now listening on: http://localhost:54222
+2025-06-13 21:05:54.700 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Application started. Press Ctrl+C to shut down.
+2025-06-13 21:05:54.710 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Hosting environment: Development
+2025-06-13 21:05:54.720 +07:00 [INF] 6/13/2025 2:05:54 PM [Information] Content root path: C:\Users\Admin\Documents\Github\run-aspnetcore-realworld\src\AspnetRun.Web
+2025-06-13 21:05:56.040 +07:00 [INF] 6/13/2025 2:05:56 PM [Information] Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedBy], [p].[CreatedDate], [p].[Description], [p].[ImageFile], [p].[ModifiedBy], [p].[ModifiedDate], [p].[Name], [p].[Slug], [p].[Star], [p].[Summary], [p].[UnitPrice], [p].[UnitsInStock], [c].[Id], [c].[CreatedBy], [c].[CreatedDate], [c].[Description], [c].[ImageName], [c].[ModifiedBy], [c].[ModifiedDate], [c].[Name]
+FROM [Product] AS [p]
+INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+2025-06-13 21:05:56.398 +07:00 [INF] 6/13/2025 2:05:56 PM [Information] Index page loaded with 25 products.
+2025-06-13 21:06:11.888 +07:00 [INF] 6/13/2025 2:06:11 PM [Information] Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedBy], [p].[CreatedDate], [p].[Description], [p].[ImageFile], [p].[ModifiedBy], [p].[ModifiedDate], [p].[Name], [p].[Slug], [p].[Star], [p].[Summary], [p].[UnitPrice], [p].[UnitsInStock], [c].[Id], [c].[CreatedBy], [c].[CreatedDate], [c].[Description], [c].[ImageName], [c].[ModifiedBy], [c].[ModifiedDate], [c].[Name]
+FROM [Product] AS [p]
+INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+2025-06-13 21:06:14.287 +07:00 [INF] 6/13/2025 2:06:14 PM [Warning] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-13 21:06:14.437 +07:00 [INF] 6/13/2025 2:06:14 PM [Information] Executed DbCommand (69ms) [Parameters=[@__ToLower_0_contains='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreatedBy], [p].[CreatedDate], [p].[Description], [p].[ImageFile], [p].[ModifiedBy], [p].[ModifiedDate], [p].[Name], [p].[Slug], [p].[Star], [p].[Summary], [p].[UnitPrice], [p].[UnitsInStock], [c].[Id], [c].[CreatedBy], [c].[CreatedDate], [c].[Description], [c].[ImageName], [c].[ModifiedBy], [c].[ModifiedDate], [c].[Name], [s].[Id], [s].[CreatedBy], [s].[CreatedDate], [s].[Description], [s].[ModifiedBy], [s].[ModifiedDate], [s].[Name], [s].[ProductId], [r].[Id], [r].[Comment], [r].[CreatedBy], [r].[CreatedDate], [r].[EMail], [r].[ModifiedBy], [r].[ModifiedDate], [r].[Name], [r].[ProductId], [r].[Star], [t].[Id], [t].[CreatedBy], [t].[CreatedDate], [t].[ModifiedBy], [t].[ModifiedDate], [t].[Name], [t].[ProductId]
+FROM [Product] AS [p]
+INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+LEFT JOIN [Specification] AS [s] ON [p].[Id] = [s].[ProductId]
+LEFT JOIN [Review] AS [r] ON [p].[Id] = [r].[ProductId]
+LEFT JOIN [Tag] AS [t] ON [p].[Id] = [t].[ProductId]
+WHERE LOWER([p].[Slug]) LIKE @__ToLower_0_contains ESCAPE N'\'
+ORDER BY [p].[Id], [c].[Id], [s].[Id], [r].[Id]

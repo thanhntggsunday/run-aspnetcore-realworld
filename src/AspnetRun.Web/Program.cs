@@ -4,6 +4,7 @@ using AspnetRun.Core.Configuration;
 using AspnetRun.Core.Repositories;
 using AspnetRun.Core.Repositories.Base;
 using AspnetRun.Infrastructure.Data;
+using AspnetRun.Infrastructure.Logging;
 using AspnetRun.Infrastructure.Repository;
 using AspnetRun.Infrastructure.Repository.Base;
 using AspnetRun.Web.Data.Interfaces;
@@ -12,6 +13,8 @@ using AspnetRun.Web.HealthChecks;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,20 +34,27 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddLogging();
 
-Log.Logger = new LoggerConfiguration()
-    .Enrich.FromLogContext()
-    .WriteTo.Async(
-        a => a.File("Logs/log.txt", 
-                    rollingInterval: RollingInterval.Day, 
-                    retainedFileCountLimit: 7,
-                    buffered: true, 
-                    flushToDiskInterval: TimeSpan.FromSeconds(5))
-     )
-    .WriteTo.Console()
-    .CreateLogger();
+//Log.Logger = new LoggerConfiguration()
+//    .Enrich.FromLogContext()
+//    .WriteTo.Async(
+//        a => a.File("Logs/log.txt", 
+//                    rollingInterval: RollingInterval.Day, 
+//                    retainedFileCountLimit: 7,
+//                    buffered: true, 
+//                    flushToDiskInterval: TimeSpan.FromSeconds(5))
+//     )
+//    .WriteTo.Console()
+//    .CreateLogger();
 
+//builder.Logging.ClearProviders();
+//builder.Logging.AddSerilog();
+
+// Tạo đường dẫn file log
+string logFilePath = "Logs/log.txt";
+
+// Đăng ký Custom Logger
 builder.Logging.ClearProviders();
-builder.Logging.AddSerilog();
+builder.Logging.AddProvider(new FileLoggerProvider(logFilePath));
 
 //
 // cookie
