@@ -1,8 +1,8 @@
 ﻿namespace AspnetRun.Infrastructure.Logging
 {
-    using Microsoft.Extensions.Logging;
     using System;
-    using System.IO;
+    using Microsoft.Extensions.Logging;
+    using System.Collections.Generic;
 
     public class FileLogger : ILogger
     {
@@ -13,7 +13,10 @@
             _filePath = filePath;
         }
 
-        public IDisposable? BeginScope<TState>(TState state) => null;
+        public IDisposable BeginScope<TState>(TState state)
+        {
+            return new LogScope(state);
+        }
 
         public bool IsEnabled(LogLevel logLevel) => true;
 
@@ -32,27 +35,60 @@
                 case LogLevel.Trace:
                     SerilogProvider.Information(message, _filePath);
                     break;
+
                 case LogLevel.Debug:
                     SerilogProvider.Information(message, _filePath);
                     break;
+
                 case LogLevel.Information:
                     SerilogProvider.Information(message, _filePath);
                     break;
+
                 case LogLevel.Warning:
                     SerilogProvider.Warning(message, _filePath);
                     break;
+
                 case LogLevel.Error:
                     SerilogProvider.Error(message, _filePath);
                     break;
+
                 case LogLevel.Critical:
                     SerilogProvider.Information(message, _filePath);
                     break;
+
                 case LogLevel.None:
                     SerilogProvider.Information(message, _filePath);
                     break;
+
                 default:
                     break;
-            }           
+            }
         }
+
+        private class LogScope : IDisposable
+        {
+            private readonly object _state;
+
+            public LogScope(object state)
+            {
+                _state = state;
+                LogContext.Push(_state);
+            }
+
+            public void Dispose()
+            {
+                LogContext.Pop();
+            }
+        }
+    }
+
+    // Helper class for managing log context
+    public static class LogContext
+    {
+        private static readonly Stack<object> _contextStack = new Stack<object>();
+
+        public static void Push(object state) => _contextStack.Push(state);
+
+        public static void Pop() => _contextStack.Pop();
     }
 }
