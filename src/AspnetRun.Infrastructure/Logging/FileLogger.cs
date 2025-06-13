@@ -89,6 +89,13 @@
 
         public static void Push(object state) => _contextStack.Push(state);
 
-        public static void Pop() => _contextStack.Pop();
+        public static void Pop()
+        {
+            if (_contextStack.Count <= 0)
+            {
+                return;
+            }
+            _contextStack.Pop();
+        }
     }
 }
