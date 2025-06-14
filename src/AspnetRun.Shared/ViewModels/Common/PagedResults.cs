@@ -114,5 +114,60 @@ namespace AspnetRun.Shared.ViewModels.Common
         /// List of page numbers that we can loop
         /// </summary>
         public IEnumerable<int> PageNumbers { get; private set; }
+
+        /// <summary>
+        /// Page name for Razer Pages
+        /// </summary>
+        public string RazerPageName { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Generate Pagination
+        /// </summary>
+        /// <returns></returns>
+        public string GeneratePagination()
+        {
+            return GeneratePagination(RazerPageName, PageNumber, TotalPages, PageNumbers.ToList());
+        }
+
+        /// <summary>
+        /// Generate Pagination
+        /// </summary>
+        /// <param name="pageNumber"></param>
+        /// <param name="totalPages"></param>
+        /// <param name="pageNumbers"></param>
+        /// <returns></returns>
+        public static string GeneratePagination(string RazerPageName, int pageNumber, int totalPages, List<int> pageNumbers)
+        {
+            StringBuilder html = new StringBuilder();
+
+            html.Append("<nav class='table-responsive'>");
+            html.Append("<ul class='pagination justify-content-center d-flex flex-wrap'>");
+
+            // First & Previous buttons
+            html.Append($"<li class='page-item {(pageNumber > 1 ? "enabled" : "disabled")}'>");
+            html.Append($"<a class='page-link' href='/{RazerPageName}?pageNumber=1'>First</a></li>");
+
+            html.Append($"<li class='page-item {(pageNumber > 1 ? "enabled" : "disabled")}'>");
+            html.Append($"<a class='page-link' href='/{RazerPageName}?pageNumber={pageNumber - 1}'>Prev</a></li>");
+
+            // Page numbers
+            foreach (var num in pageNumbers)
+            {
+                html.Append($"<li class='page-item {(num == pageNumber ? "active" : "")}'>");
+                html.Append($"<a class='page-link' href='/{RazerPageName}?pageNumber={num}'>{num}</a></li>");
+            }
+
+            // Next & Last buttons
+            html.Append($"<li class='page-item {(pageNumber < totalPages ? "enabled" : "disabled")}'>");
+            html.Append($"<a class='page-link' href='/{RazerPageName}?pageNumber={pageNumber + 1}'>Next</a></li>");
+
+            html.Append($"<li class='page-item {(pageNumber < totalPages ? "enabled" : "disabled")}'>");
+            html.Append($"<a class='page-link' href='/{RazerPageName}?pageNumber={totalPages}'>Last</a></li>");
+
+            html.Append("</ul>");
+            html.Append("</nav>");
+
+            return html.ToString();
+        }
     }
 }
