@@ -32,12 +32,12 @@
         /// <summary>
         /// Gets or sets the SortExpression
         /// </summary>
-        public string SortExpression { get; set; }
+        public string SortExpression { get; set; } = string.Empty;
 
         /// <summary>
         /// Gets or sets the SortDirection
         /// </summary>
-        public string SortDirection { get; set; }
+        public string SortDirection { get; set; } = string.Empty;
 
         /// <summary>
         /// Gets or sets the Pager
