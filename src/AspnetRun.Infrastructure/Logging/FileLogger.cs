@@ -24,7 +24,7 @@
         {
             if (!IsEnabled(logLevel)) return;
 
-            string message = $"{DateTime.UtcNow} [{logLevel}] {formatter(state, exception)}";
+            string message = $"{formatter(state, exception)}";
             if (exception != null)
             {
                 message += $" Exception: {exception}";
