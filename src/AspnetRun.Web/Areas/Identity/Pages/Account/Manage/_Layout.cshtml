@@ -1,12 +1,19 @@
 ﻿@{
-    Layout = "/Pages/Shared/_Layout.cshtml";
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout) && parentLayout !=  null)
+    {
+        Layout = parentLayout.ToString();
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
 }
 
 <div class="container">
     <h1>Manage your account</h1>
 
     <div>
-        <h4>Change your account settings</h4>
+        <h2>Change your account settings</h2>
         <hr />
         <div class="row">
             <div class="col-md-3">
@@ -16,13 +23,10 @@
                 @RenderBody()
             </div>
         </div>
+
     </div>
 </div>
 
-@if (IsSectionDefined("CartNotRequired"))
-{
-    RenderSection("CartNotRequired");
-}
 
 @section Scripts {
     @RenderSection("Scripts", required: false)

@@ -4,15 +4,5 @@
     ViewData["Title"] = "Confirm email";
 }
 
-<div class="container">
-    <h1>@ViewData["Title"]</h1>
-    <div>
-        <p>
-            Thank you for confirming your email.
-        </p>
-    </div>
-</div>
-
-@section CartNotRequired {
-    <!-- Not need to render Shopping Cart in Cart Page -->
-}
+<h1>@ViewData["Title"]</h1>
+<partial name="_StatusMessage" model="Model.StatusMessage" />

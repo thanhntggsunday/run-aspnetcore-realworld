@@ -1,4 +1,4 @@
-﻿using AspnetRun.Application.Interfaces;
+using AspnetRun.Application.Interfaces;
 using AspnetRun.Application.Services;
 using AspnetRun.Core.Configuration;
 using AspnetRun.Core.Repositories;
@@ -18,6 +18,7 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+// var connectionString = builder.Configuration.GetConnectionString("AspnetRunContextConnection") ?? throw new InvalidOperationException("Connection string 'AspnetRunContextConnection' not found.");
 var services = builder.Services;
 var configuration = builder.Configuration;
 
