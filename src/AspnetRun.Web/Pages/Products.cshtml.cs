@@ -1,4 +1,5 @@
 ﻿using AspnetRun.Application.Models;
+using AspnetRun.Shared.ViewModels.Common;
 using AspnetRun.Web.Data.Interfaces;
 using AspnetRun.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -21,14 +22,15 @@ namespace AspnetRun.Web.Pages
             _cartComponentService = cartComponentService ?? throw new ArgumentNullException(nameof(cartComponentService));
         }
 
-        public ListViewModel<ProductDto> ProductList { get; set; } = new ListViewModel<ProductDto>();
+        public PagedResults<ProductDto> ProductList { get; set; } = new PagedResults<ProductDto>(0);
 
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; } = string.Empty;
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int pageNumber = 1)
         {
-            ProductList = await _productPageService.GetProducts(SearchTerm);
+            string searchTerm = SearchTerm;
+            ProductList = await _productPageService.GetProductsPaging(pageNumber, searchTerm);
         }
         
         public async Task<IActionResult> OnPostAddToCartAsync(int productId)

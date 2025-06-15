@@ -1,8 +1,11 @@
 ﻿using AspnetRun.Application.Interfaces;
 using AspnetRun.Application.Models;
+using AspnetRun.Shared.ViewModels.Common;
 using AspnetRun.Web.Data.Interfaces;
 using AspnetRun.Web.ViewModels;
 using AutoMapper;
+using DocumentFormat.OpenXml.Spreadsheet;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Microsoft.Extensions.Logging;
 using NetMvc.Cms.Common.ViewModel.Common;
 using System;
@@ -118,6 +121,35 @@ namespace AspnetRun.Web.Data.Services
         public async Task RemoveToCart(int cartdId, int cartItemId)
         {
             await _cartAppService.RemoveItem(cartdId, cartItemId);
+        }
+
+        public async Task<PagedResults<ProductDto>> GetProductsPaging(int pageIndex, string productName = "")
+        {
+            var pageSize = 10; // Define your page size
+                               // Create paged result
+            var result = new PagedResults<ProductDto>(0);
+            var items = new List<ProductDto>();
+
+            if (string.IsNullOrWhiteSpace(productName))
+            {
+                var list = await _productAppService.GetProductList();
+                // var mapped = _mapper.Map<IEnumerable<ProductViewModel>>(list);
+
+                items = list.ToList();
+            }
+
+            items = await _productAppService.GetProductByName(productName);
+
+            var sub_items = items.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+
+            result = new PagedResults<ProductDto>(items.Count, pageIndex, pageSize)
+            {
+                Items = sub_items
+            };
+
+            result.RazerPageName = "Products"; // Set the Razor page name for pagination links
+
+            return result;
         }
     }
 }

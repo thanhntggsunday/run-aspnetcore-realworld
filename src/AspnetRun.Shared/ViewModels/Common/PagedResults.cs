@@ -139,33 +139,37 @@ namespace AspnetRun.Shared.ViewModels.Common
         public static string GeneratePagination(string RazerPageName, int pageNumber, int totalPages, List<int> pageNumbers)
         {
             StringBuilder html = new StringBuilder();
+            html.Append("<div class=\"row mt-30\">");
+            html.Append(" <div class=\"col\">");
 
-            html.Append("<nav class='table-responsive'>");
-            html.Append("<ul class='pagination justify-content-center d-flex flex-wrap'>");
+            //html.Append("<nav class='table-responsive'>");
+            html.Append("<ul class='pagination'>");
 
             // First & Previous buttons
-            html.Append($"<li class='page-item {(pageNumber > 1 ? "enabled" : "disabled")}'>");
-            html.Append($"<a class='page-link' href='/{RazerPageName}?pageNumber=1'>First</a></li>");
+            html.Append($"<li class='{(pageNumber > 1 ? "enabled" : "disabled")}'>");
+            html.Append($"<a class='' href='/{RazerPageName}?pageNumber=1'>First</a></li>");
 
-            html.Append($"<li class='page-item {(pageNumber > 1 ? "enabled" : "disabled")}'>");
-            html.Append($"<a class='page-link' href='/{RazerPageName}?pageNumber={pageNumber - 1}'>Prev</a></li>");
+            html.Append($"<li class='{(pageNumber > 1 ? "enabled" : "disabled")}'>");
+            html.Append($"<a class='' href='/{RazerPageName}?pageNumber={pageNumber - 1}'>Prev</a></li>");
 
             // Page numbers
             foreach (var num in pageNumbers)
             {
-                html.Append($"<li class='page-item {(num == pageNumber ? "active" : "")}'>");
-                html.Append($"<a class='page-link' href='/{RazerPageName}?pageNumber={num}'>{num}</a></li>");
+                html.Append($"<li class='{(num == pageNumber ? "active" : "")}'>");
+                html.Append($"<a class='' href='/{RazerPageName}?pageNumber={num}'>{num}</a></li>");
             }
 
             // Next & Last buttons
-            html.Append($"<li class='page-item {(pageNumber < totalPages ? "enabled" : "disabled")}'>");
-            html.Append($"<a class='page-link' href='/{RazerPageName}?pageNumber={pageNumber + 1}'>Next</a></li>");
+            html.Append($"<li class='{(pageNumber < totalPages ? "enabled" : "disabled")}'>");
+            html.Append($"<a class='' href='/{RazerPageName}?pageNumber={pageNumber + 1}'>Next</a></li>");
 
-            html.Append($"<li class='page-item {(pageNumber < totalPages ? "enabled" : "disabled")}'>");
-            html.Append($"<a class='page-link' href='/{RazerPageName}?pageNumber={totalPages}'>Last</a></li>");
+            html.Append($"<li class='{(pageNumber < totalPages ? "enabled" : "disabled")}'>");
+            html.Append($"<a class='' href='/{RazerPageName}?pageNumber={totalPages}'>Last</a></li>");
 
             html.Append("</ul>");
-            html.Append("</nav>");
+            //html.Append("</nav>");
+            html.Append("</div>");
+            html.Append("</div>");
 
             return html.ToString();
         }

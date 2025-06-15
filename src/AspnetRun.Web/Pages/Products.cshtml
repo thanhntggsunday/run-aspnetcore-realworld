@@ -111,9 +111,9 @@
                 <!-- Shop Product Wrap Start -->
                 <div class="shop-product-wrap grid row">
                     
-                    @if (Model.ProductList.Data.Any())
+                    @if (Model.ProductList.Items.Any())
                     {
-                        foreach (var item in Model.ProductList.Data)
+                        foreach (var item in Model.ProductList.Items)
                         {
                             <div class="col-xl-3 col-lg-4 col-md-6 col-12 pb-30 pt-10">
 
@@ -266,7 +266,7 @@
                 <!-- Shop Product Wrap End -->
 
                 <!-- Pagination -->
-                <div class="row mt-30">
+               @*  <div class="row mt-30">
                     <div class="col">
 
                         <ul class="pagination">
@@ -282,7 +282,13 @@
                         </ul>
 
                     </div>
-                </div>
+                </div> *@
+
+                @if (Model.ProductList.PageNumbers.Any())
+                {
+                    @Html.Raw(@Model.ProductList.GeneratePagination())
+                }
+
                 <!-- Pagination End -->
             </div>
 

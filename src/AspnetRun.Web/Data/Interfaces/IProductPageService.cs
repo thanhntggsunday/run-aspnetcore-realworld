@@ -1,4 +1,5 @@
 ﻿using AspnetRun.Application.Models;
+using AspnetRun.Shared.ViewModels.Common;
 using AspnetRun.Web.ViewModels;
 using NetMvc.Cms.Common.ViewModel.Common;
 
@@ -13,6 +14,8 @@ namespace AspnetRun.Web.Data.Interfaces
         Task<ProductViewModel> GetProductBySlug(string slug);
 
         Task<ListViewModel<ProductDto>> GetProductByCategory(int categoryId);
+
+        Task<PagedResults<ProductDto>> GetProductsPaging(int pageIndex, string productName = "");
 
         Task<ListViewModel<CategoryDto>> GetCategories();
 
